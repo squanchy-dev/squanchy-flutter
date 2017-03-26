@@ -29,6 +29,10 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
       ],
     );
 
+    Text titleWidget = new Text(event.title,
+        style: theme.textTheme.display1.copyWith(
+            color: Colors.white, fontSize: 24.0, height: 1.714285714));
+
     var rootScrollView = new CustomScrollView(slivers: [
       appBar,
       new SliverList(
@@ -38,7 +42,8 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
           child: new Padding(
               padding: new EdgeInsets.fromLTRB(72.0, 8.0, 8.0, 8.0),
               child: new Column(
-                  children: speakersChildrenFor(event.speakers),
+                  children: new List.from(speakersChildrenFor(event.speakers))
+                    ..add(titleWidget),
                   crossAxisAlignment: CrossAxisAlignment.start)),
         )
       ]))
@@ -49,6 +54,11 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
 
   List<Widget> speakersChildrenFor(List<Speaker> speakers) {
     var speakerNames = speakers.map((speaker) => speaker.fullName).join(", ");
+
+    var speakerNamesWidget = new Text(speakerNames,
+        style: theme.textTheme.display1.copyWith(
+            color: Colors.white, fontSize: 14.0, height: 1.714285714));
+
     return <Widget>[
       new Row(
           children: speakers
@@ -59,10 +69,7 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
                   padding: new EdgeInsets.only(right: 8.0), child: widget))
               .toList()),
       new Padding(
-          padding: new EdgeInsets.only(top: 8.0),
-          child: new Text(speakerNames,
-              style: theme.textTheme.display1
-                  .copyWith(color: Colors.white, fontSize: 14.0, height: 1.714285714))),
+          padding: new EdgeInsets.only(top: 8.0), child: speakerNamesWidget),
     ];
   }
 
