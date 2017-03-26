@@ -21,6 +21,12 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
   Widget build(BuildContext context) {
     theme = Theme.of(context);
 
+    var titleTextStyle = theme.textTheme.display1.copyWith(
+        color: Colors.white,
+        fontSize: 24.0,
+        fontFamily: "League Spartan",
+        fontWeight: FontWeight.w700);
+
     var appBar = new SliverAppBar(
       leading: new BackButton(),
       actions: [
@@ -29,9 +35,9 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
       ],
     );
 
-    Text titleWidget = new Text(event.title,
-        style: theme.textTheme.display1.copyWith(
-            color: Colors.white, fontSize: 24.0, height: 1.714285714));
+    Widget titleWidget = new Padding(
+        padding: new EdgeInsets.only(top: 8.0),
+        child: new Text(event.title, style: titleTextStyle));
 
     var rootScrollView = new CustomScrollView(slivers: [
       appBar,
@@ -46,18 +52,23 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
                     ..add(titleWidget),
                   crossAxisAlignment: CrossAxisAlignment.start)),
         )
-      ]))
+      ])),
     ]);
 
     return new Scaffold(key: scaffoldKey, body: rootScrollView);
   }
 
   List<Widget> speakersChildrenFor(List<Speaker> speakers) {
+    var speakerTextStyle = theme.textTheme.title.copyWith(
+        color: Colors.white,
+        fontSize: 14.0,
+        height: 1.714285714,
+        fontFamily: "League Spartan",
+        fontWeight: FontWeight.w700);
+
     var speakerNames = speakers.map((speaker) => speaker.fullName).join(", ");
 
-    var speakerNamesWidget = new Text(speakerNames,
-        style: theme.textTheme.display1.copyWith(
-            color: Colors.white, fontSize: 14.0, height: 1.714285714));
+    var speakerNamesWidget = new Text(speakerNames, style: speakerTextStyle);
 
     return <Widget>[
       new Row(
