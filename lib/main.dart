@@ -1,34 +1,50 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MyApp());
+  runApp(new SquanchyFlutterApp());
 }
 
-class MyApp extends StatelessWidget {
+class SquanchyFlutterApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Squanchy Flutter',
       theme: new ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see
-        // the application has a blue toolbar. Then, without quitting
-        // the app, try changing the primarySwatch below to Colors.green
-        // and then invoke "hot reload" (press "r" in the console where
-        // you ran "flutter run", or press Run > Hot Reload App in IntelliJ).
-        // Notice that the counter didn't reset back to zero -- the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-      home: new MyHomePage(title: 'Flutter Demo Home Page'),
+          // This is the theme of your application.
+          //
+          // Try running your application with "flutter run". You'll see
+          // the application has a blue toolbar. Then, without quitting
+          // the app, try changing the primarySwatch below to Colors.green
+          // and then invoke "hot reload" (press "r" in the console where
+          // you ran "flutter run", or press Run > Hot Reload App in IntelliJ).
+          // Notice that the counter didn't reset back to zero -- the application
+          // is not restarted.
+          primarySwatch: const MaterialColor(0XFFE65B77, const <int, Color>{
+            50: const Color(0xFFFCEBEF),
+            100: const Color(0xFFF8CED6),
+            200: const Color(0xFFF3ADBB),
+            300: const Color(0xFFEE8CA0),
+            400: const Color(0xFFEA748B),
+            500: const Color(0XFFE65B77),
+            600: const Color(0xFFE3536F),
+            700: const Color(0xFFDF4964),
+            800: const Color(0xFFDB405A),
+            900: const Color(0xFFD52F47),
+          }),
+          accentColor: const MaterialAccentColor(0xFF67B6E2, const <int, Color>{
+            100: const Color(0xFF95CCEB),
+            200: const Color(0xFF67B6E2),
+            400: const Color(0xFF5FAFDF),
+            700: const Color(0xFF4A9ED6),
+          })),
+      home: new EventDetailsPage(title: 'Squanchy Flutter'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class EventDetailsPage extends StatefulWidget {
+  EventDetailsPage({Key key, this.title}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful,
   // meaning that it has a State object (defined below) that contains
@@ -42,10 +58,10 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  _MyHomePageState createState() => new _MyHomePageState();
+  _EventDetailsPageState createState() => new _EventDetailsPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _EventDetailsPageState extends State<EventDetailsPage> {
   int _counter = 0;
 
   void _incrementCounter() {
