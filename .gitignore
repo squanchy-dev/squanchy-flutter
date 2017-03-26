@@ -1,0 +1,30 @@
+.DS_Store
+
+# IDEA/Android Studio ignores
+*.iml
+*.ipr
+*.iws
+/.idea/*
+
+# IDEA/Android Studio Ignore exceptions
+!/.idea/vcs.xml
+!/.idea/fileTemplates/
+!/.idea/inspectionProfiles/
+!/.idea/scopes/
+!/.idea/codeStyleSettings.xml
+!/.idea/.name
+!/.idea/encodings.xml
+!/.idea/copyright/
+!/.idea/compiler.xml
+
+.packages
+packages
+
+.atom/
+.pub/
+pubspec.lock
+
+build/
+
+ios/.generated/
+.flutter-plugins
