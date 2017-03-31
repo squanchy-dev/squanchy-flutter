@@ -28,12 +28,12 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
         fontWeight: FontWeight.w700);
 
     var appBar = new SliverAppBar(
-      leading: new BackButton(),
-      actions: [
-        new IconButton(
-            icon: const Icon(Icons.search), onPressed: _handleSearchPress)
-      ],
-    );
+        leading: new BackButton(),
+        actions: [
+          new IconButton(
+              icon: const Icon(Icons.search), onPressed: _handleSearchPress)
+        ],
+        );
 
     Widget titleWidget = new Padding(
         padding: new EdgeInsets.only(top: 8.0),
@@ -43,16 +43,18 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
       appBar,
       new SliverList(
           delegate: new SliverChildListDelegate([
-        new Container(
-          decoration: new BoxDecoration(backgroundColor: theme.primaryColor),
-          child: new Padding(
-              padding: new EdgeInsets.fromLTRB(72.0, 8.0, 8.0, 8.0),
-              child: new Column(
-                  children: new List.from(speakersChildrenFor(event.speakers))
-                    ..add(titleWidget),
-                  crossAxisAlignment: CrossAxisAlignment.start)),
-        )
-      ])),
+            new Container(
+                decoration: new BoxDecoration(
+                    backgroundColor: theme.primaryColor),
+                child: new Padding(
+                    padding: new EdgeInsets.fromLTRB(72.0, 8.0, 8.0, 8.0),
+                    child: new Column(
+                        children: new List.from(
+                            speakersChildrenFor(event.speakers))
+                          ..add(titleWidget),
+                        crossAxisAlignment: CrossAxisAlignment.start)),
+                )
+          ])),
     ]);
 
     return new Scaffold(key: scaffoldKey, body: rootScrollView);
@@ -73,11 +75,13 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
     return <Widget>[
       new Row(
           children: speakers
-              .map((speaker) => new CircleAvatar(
-                  backgroundImage: new NetworkImage(speaker.avatarUrl),
-                  radius: 20.0))
-              .map((widget) => new Padding(
-                  padding: new EdgeInsets.only(right: 8.0), child: widget))
+              .map((speaker) =>
+          new CircleAvatar(
+              backgroundImage: new NetworkImage(speaker.avatarUrl),
+              radius: 20.0))
+              .map((widget) =>
+          new Padding(
+              padding: new EdgeInsets.only(right: 8.0), child: widget))
               .toList()),
       new Padding(
           padding: new EdgeInsets.only(top: 8.0), child: speakerNamesWidget),

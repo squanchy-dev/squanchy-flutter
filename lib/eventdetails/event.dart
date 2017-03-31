@@ -22,11 +22,11 @@ const kEvent = const Event(
       const Speaker(
           fullName: "Sebastiano Poggi",
           avatarUrl:
-              "http://it.droidcon.com/2017/wp-content/uploads/2015/02/sebastiano-poggi.jpg"),
+          "http://it.droidcon.com/2017/wp-content/uploads/2015/02/sebastiano-poggi.jpg"),
       const Speaker(
           fullName: "Eugenio Marletti",
           avatarUrl:
-              "http://it.droidcon.com/2017/wp-content/uploads/2015/02/3f952ce.jpg"),
+          "http://it.droidcon.com/2017/wp-content/uploads/2015/02/3f952ce.jpg"),
     ],
     where: "Sala Londra",
     when: "Later on",

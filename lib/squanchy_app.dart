@@ -27,9 +27,9 @@ class SquanchyFlutterApp extends StatelessWidget {
         fontFamily: "Quicksand");
 
     return new MaterialApp(
-      title: 'Squanchy Flutter',
-      theme: theme,
-      home: new EventDetailsPage(),
-    );
+        title: 'Squanchy Flutter',
+        theme: theme,
+        home: new EventDetailsPage(),
+        );
   }
 }
