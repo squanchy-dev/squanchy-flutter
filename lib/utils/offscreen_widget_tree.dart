@@ -5,11 +5,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-const Size _kTestViewSize = const Size(400.0, 300.0);
-
 class _OffscreenRenderView extends RenderView {
-  _OffscreenRenderView()
-      : super(configuration: const ViewConfiguration(size: _kTestViewSize));
+  _OffscreenRenderView() : super(configuration: const ViewConfiguration(size: const Size(800.0, 600.0)));
 
   @override
   void compositeFrame() {
@@ -40,10 +37,6 @@ class OffscreenWidgetTree {
   void pumpFrame() {
     buildOwner.buildScope(root);
     pipelineOwner.flushLayout();
-    //pipelineOwner.flushCompositingBits();
-    //pipelineOwner.flushPaint();
-    //renderView.compositeFrame();
-    //pipelineOwner.flushSemantics();
     buildOwner.finalizeTree();
   }
 }

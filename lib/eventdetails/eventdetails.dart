@@ -35,6 +35,7 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
     var appBarBottom = new Padding(
         padding: new EdgeInsets.fromLTRB(72.0, 8.0, 8.0, 8.0),
         child: new Column(
+            mainAxisSize: MainAxisSize.min,
             children: new List.from(
                 speakersChildrenFor(event.speakers))
               ..add(titleWidget),
