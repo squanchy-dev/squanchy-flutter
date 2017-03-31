@@ -107,7 +107,6 @@ class _AppBarBottomWidget extends AppBarBottomWidget {
 
   final Widget child;
 
-  // TODO: implement bottomHeight
   @override
   double get bottomHeight {
     var buildContextGetter = new _BuildContextGetter(child: child);
