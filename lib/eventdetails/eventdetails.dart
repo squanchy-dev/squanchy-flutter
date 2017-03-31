@@ -1,3 +1,4 @@
+import 'package:SquanchyFlutter/utils/offscreen_widget_tree.dart';
 import 'package:flutter/material.dart';
 
 import 'event.dart';
@@ -27,37 +28,31 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
         fontFamily: "League Spartan",
         fontWeight: FontWeight.w700);
 
-    var appBar = new SliverAppBar(
+    var titleWidget = new Padding(
+        padding: new EdgeInsets.only(top: 8.0),
+        child: new Text(event.title, style: titleTextStyle));
+
+    var appBarBottom = new Padding(
+        padding: new EdgeInsets.fromLTRB(72.0, 8.0, 8.0, 8.0),
+        child: new Column(
+            children: new List.from(
+                speakersChildrenFor(event.speakers))
+              ..add(titleWidget),
+            crossAxisAlignment: CrossAxisAlignment.start));
+
+    var appBar = new AppBar(
         leading: new BackButton(),
         actions: [
           new IconButton(
               icon: const Icon(Icons.search), onPressed: _handleSearchPress)
         ],
+        bottom: new _AppBarBottomWidget(child: appBarBottom)
+    );
+
+    return new Scaffold(
+        key: scaffoldKey,
+        appBar: appBar,
         );
-
-    Widget titleWidget = new Padding(
-        padding: new EdgeInsets.only(top: 8.0),
-        child: new Text(event.title, style: titleTextStyle));
-
-    var rootScrollView = new CustomScrollView(slivers: [
-      appBar,
-      new SliverList(
-          delegate: new SliverChildListDelegate([
-            new Container(
-                decoration: new BoxDecoration(
-                    backgroundColor: theme.primaryColor),
-                child: new Padding(
-                    padding: new EdgeInsets.fromLTRB(72.0, 8.0, 8.0, 8.0),
-                    child: new Column(
-                        children: new List.from(
-                            speakersChildrenFor(event.speakers))
-                          ..add(titleWidget),
-                        crossAxisAlignment: CrossAxisAlignment.start)),
-                )
-          ])),
-    ]);
-
-    return new Scaffold(key: scaffoldKey, body: rootScrollView);
   }
 
   List<Widget> speakersChildrenFor(List<Speaker> speakers) {
@@ -92,4 +87,35 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
     scaffoldKey.currentState
         .showSnackBar(new SnackBar(content: new Text("¯\\_(ツ)_/¯")));
   }
+}
+
+class _BuildContextGetter extends StatelessWidget {
+  _BuildContextGetter({this.child});
+
+  final Widget child;
+  BuildContext context;
+
+  @override
+  Widget build(BuildContext context) {
+    this.context = context;
+    return child;
+  }
+}
+
+class _AppBarBottomWidget extends AppBarBottomWidget {
+  _AppBarBottomWidget({this.child});
+
+  final Widget child;
+
+  // TODO: implement bottomHeight
+  @override
+  double get bottomHeight {
+    var buildContextGetter = new _BuildContextGetter(child: child);
+    new OffscreenWidgetTree().pumpWidget(buildContextGetter);
+    var height = buildContextGetter.context.size.height;
+    return height;
+  }
+
+  @override
+  Element createElement() => child.createElement();
 }
