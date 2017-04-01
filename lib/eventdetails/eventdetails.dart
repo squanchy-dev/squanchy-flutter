@@ -20,6 +20,9 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
+    final leftPadding = 16.0;
+    final keylineAfterLabel = 72.0 - leftPadding;
+
     final titleTextStyle = theme.textTheme.display1.copyWith(
         color: Colors.white,
         fontSize: 24.0,
@@ -75,12 +78,10 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
             .fromContext(context, appBarBottom),
         );
 
-    final afterLabelInset = 72.0 - 16.0;
-
     final rowWhen = _rowWithLabelWidget(
         "When",
         labelsTextStyle,
-        afterLabelInset,
+        keylineAfterLabel,
         [
           new Text(event.when),
         ]
@@ -89,7 +90,7 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
     final rowWhere = _rowWithLabelWidget(
         "Where",
         labelsTextStyle,
-        afterLabelInset,
+        keylineAfterLabel,
         [
           new Text(event.where),
           new Text("   "),
@@ -108,7 +109,7 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
         );
 
     final body = new ListView(
-        padding: new EdgeInsets.fromLTRB(16.0, 18.0, 24.0, 18.0),
+        padding: new EdgeInsets.fromLTRB(leftPadding, 18.0, 24.0, 18.0),
         children: [
           rowWhen,
           rowWhere,
