@@ -5,7 +5,7 @@ import 'eventdetails/eventdetails.dart';
 class SquanchyFlutterApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final theme = new ThemeData(
+    final _theme = new ThemeData(
         primarySwatch: const MaterialColor(0XFFE65B77, const <int, Color>{
           50: const Color(0xFFFCEBEF),
           100: const Color(0xFFF8CED6),
@@ -24,7 +24,17 @@ class SquanchyFlutterApp extends StatelessWidget {
           400: const Color(0xFF5FAFDF),
           700: const Color(0xFF4A9ED6),
         }),
-        fontFamily: "Quicksand");
+        fontFamily: "Quicksand",
+        );
+
+    final theme = _theme.copyWith(
+        textTheme: _theme.textTheme.copyWith(
+            body1: _theme.textTheme.body1.copyWith(
+                fontWeight: FontWeight.w500,
+                color: const Color(0xFF4E4E4E),
+                ),
+            ),
+        );
 
     return new MaterialApp(
         title: 'Squanchy Flutter',
