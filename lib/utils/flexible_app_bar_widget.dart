@@ -20,7 +20,7 @@ class FlexibleAppBarBottomWidget extends AppBarBottomWidget {
   @override
   double get bottomHeight {
     BuildContext savedContext;
-    final Widget builder = new Builder(
+    final builder = new Builder(
         builder: (BuildContext context) {
           savedContext = context;
           return child;
