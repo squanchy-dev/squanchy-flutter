@@ -1,4 +1,4 @@
-import 'package:SquanchyFlutter/utils/offscreen_widget_tree.dart';
+import 'package:SquanchyFlutter/utils/flexible_app_bar_widget.dart';
 import 'package:flutter/material.dart';
 
 import 'event.dart';
@@ -16,11 +16,9 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
   final GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey<ScaffoldState>();
   final Event event;
 
-  ThemeData theme;
-
   @override
   Widget build(BuildContext context) {
-    theme = Theme.of(context);
+    final theme = Theme.of(context);
 
     var titleTextStyle = theme.textTheme.display1.copyWith(
         color: Colors.white,
@@ -37,7 +35,7 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
         child: new Column(
             mainAxisSize: MainAxisSize.min,
             children: new List.from(
-                speakersChildrenFor(event.speakers))
+                speakersChildrenFor(theme, event.speakers))
               ..add(titleWidget),
             crossAxisAlignment: CrossAxisAlignment.start));
 
@@ -47,7 +45,8 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
           new IconButton(
               icon: const Icon(Icons.search), onPressed: _handleSearchPress)
         ],
-        bottom: new _AppBarBottomWidget(child: appBarBottom)
+        bottom: new FlexibleAppBarBottomWidget
+            .fromContext(context, appBarBottom)
     );
 
     return new Scaffold(
@@ -56,7 +55,7 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
         );
   }
 
-  List<Widget> speakersChildrenFor(List<Speaker> speakers) {
+  List<Widget> speakersChildrenFor(ThemeData theme, List<Speaker> speakers) {
     var speakerTextStyle = theme.textTheme.title.copyWith(
         color: Colors.white,
         fontSize: 14.0,
@@ -88,34 +87,4 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
     scaffoldKey.currentState
         .showSnackBar(new SnackBar(content: new Text("¯\\_(ツ)_/¯")));
   }
-}
-
-class _BuildContextGetter extends StatelessWidget {
-  _BuildContextGetter({this.child});
-
-  final Widget child;
-  BuildContext context;
-
-  @override
-  Widget build(BuildContext context) {
-    this.context = context;
-    return child;
-  }
-}
-
-class _AppBarBottomWidget extends AppBarBottomWidget {
-  _AppBarBottomWidget({this.child});
-
-  final Widget child;
-
-  @override
-  double get bottomHeight {
-    var buildContextGetter = new _BuildContextGetter(child: child);
-    new OffscreenWidgetTree().pumpWidget(buildContextGetter);
-    var height = buildContextGetter.context.size.height;
-    return height;
-  }
-
-  @override
-  Element createElement() => child.createElement();
 }
