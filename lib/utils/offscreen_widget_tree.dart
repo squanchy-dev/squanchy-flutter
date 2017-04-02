@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 class OffscreenWidgetTree {
-  OffscreenWidgetTree(Size size)
-      : renderView = new _OffscreenRenderView(size) {
+  OffscreenWidgetTree(Size containerSize)
+      : renderView = new _OffscreenRenderView(containerSize) {
     renderView.attach(pipelineOwner);
     renderView.scheduleInitialFrame();
   }
