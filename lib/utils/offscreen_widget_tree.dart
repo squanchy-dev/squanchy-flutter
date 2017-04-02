@@ -16,6 +16,7 @@ class OffscreenWidgetTree {
   final RenderView renderView;
   final buildOwner = new BuildOwner();
   final pipelineOwner = new PipelineOwner();
+
   RenderObjectToWidgetElement<RenderBox> root;
 
   void pumpWidget(Widget app) {
