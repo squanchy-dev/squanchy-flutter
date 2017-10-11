@@ -3,7 +3,8 @@ import 'package:flutter/rendering.dart';
 
 import 'offscreen_widget_tree.dart';
 
-class FlexibleAppBarBottomWidget extends AppBarBottomWidget {
+class FlexibleAppBarBottomWidget extends StatelessWidget
+    implements PreferredSizeWidget {
   FlexibleAppBarBottomWidget(this.screenSize, this.child);
 
   FlexibleAppBarBottomWidget.fromContext(BuildContext context, Widget child)
@@ -18,7 +19,7 @@ class FlexibleAppBarBottomWidget extends AppBarBottomWidget {
   final Size screenSize;
 
   @override
-  double get bottomHeight {
+  Size get preferredSize {
     BuildContext savedContext;
     final builder = new Builder(
         builder: (BuildContext context) {
@@ -28,9 +29,9 @@ class FlexibleAppBarBottomWidget extends AppBarBottomWidget {
         );
     new OffscreenWidgetTree(screenSize)
         .pumpWidget(new Center(child: builder));
-    return savedContext.size.height;
+    return new Size.fromHeight(savedContext.size.height);
   }
 
   @override
-  Element createElement() => child.createElement();
+  Widget build(BuildContext context) => child;
 }
