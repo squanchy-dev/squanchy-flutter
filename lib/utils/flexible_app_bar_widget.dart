@@ -24,7 +24,7 @@ class FlexibleAppBarBottomWidget extends StatelessWidget
     final builder = new Builder(
         builder: (BuildContext context) {
           savedContext = context;
-          return child;
+          return wrapInMediaQuery(child: child);
         },
         );
     new OffscreenWidgetTree(screenSize)
@@ -34,4 +34,14 @@ class FlexibleAppBarBottomWidget extends StatelessWidget
 
   @override
   Widget build(BuildContext context) => child;
+
+  Widget wrapInMediaQuery({Widget child}) {
+    return new Directionality(
+      textDirection: TextDirection.ltr,
+      child: new MediaQuery(
+        data: const MediaQueryData(),
+        child: child,
+      ),
+    );
+  }
 }
