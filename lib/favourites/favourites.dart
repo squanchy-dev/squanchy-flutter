@@ -11,7 +11,7 @@ class FavouritesView extends StatelessWidget {
 
     return new CupertinoPageScaffold(
       navigationBar: new CupertinoNavigationBar(
-        middle: const Text('Favourites'),
+        middle: new Text('Favourites', style: theme.textTheme.headline.copyWith(color: Colors.white),),
         trailing: const SettingsButton(),
         backgroundColor: Colors.blue,
       ), child: new Container(

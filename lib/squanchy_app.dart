@@ -26,6 +26,7 @@ class SquanchyFlutterApp extends StatelessWidget {
           400: const Color(0xFF5FAFDF),
           700: const Color(0xFF4A9ED6),
         }),
+        backgroundColor: new Color(0x673AB7),
         fontFamily: "Quicksand",
         );
 
@@ -33,14 +34,13 @@ class SquanchyFlutterApp extends StatelessWidget {
         textTheme: _theme.textTheme.copyWith(
             body1: _theme.textTheme.body1.copyWith(
                 fontWeight: FontWeight.w500,
-                color: const Color(0xFF4E4E4E),
+                color: Colors.blue,
                 ),
             ),
         );
 
     return new MaterialApp(
         title: 'Squanchy Flutter',
-        theme: theme,
         home: new CupertinoNavigationDemo(),
         );
   }
