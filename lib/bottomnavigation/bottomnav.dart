@@ -67,21 +67,15 @@ class CupertinoNavigationDemo extends StatelessWidget {
   }
 }
 
-class ExitButton extends StatelessWidget {
-  const ExitButton();
+class SettingsButton extends StatelessWidget {
+  const SettingsButton();
 
   @override
   Widget build(BuildContext context) {
     return new CupertinoButton(
       padding: EdgeInsets.zero,
-      child: const Tooltip(
-        message: 'Back',
-        child: const Text('Exit'),
-      ),
-      onPressed: () {
-        // The demo is on the root navigator.
-        Navigator.of(context).pop();
-      },
+      child: new Image.asset(
+        'assets/ic_settings.png'), onPressed: () {},
     );
   }
 }

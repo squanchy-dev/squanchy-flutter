@@ -8,7 +8,7 @@ class ScheduleView extends StatelessWidget {
     return new CupertinoPageScaffold(
       navigationBar: const CupertinoNavigationBar(
         middle: const Text('Schedule'),
-        trailing: const ExitButton(),
+        trailing: const SettingsButton(),
       ), child: new DecoratedBox(decoration: const BoxDecoration(color: const Color(0xFFEFEFF4))),
     );
   }

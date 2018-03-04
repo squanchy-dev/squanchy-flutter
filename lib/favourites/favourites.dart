@@ -1,15 +1,23 @@
 import 'package:SquanchyFlutter/bottomnavigation/bottomnav.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/src/material/colors.dart';
 
 class FavouritesView extends StatelessWidget {
   @override
   Widget build(BuildContext context)
   {
+    final theme = Theme.of(context);
+
     return new CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(
+      navigationBar: new CupertinoNavigationBar(
         middle: const Text('Favourites'),
-        trailing: const ExitButton(),
-      ), child: new DecoratedBox(decoration: const BoxDecoration(color: const Color(0xFFEFEFF4))),
-    );
+        trailing: const SettingsButton(),
+        backgroundColor: Colors.blue,
+      ), child: new Container(
+      decoration: new BoxDecoration(color: Colors.red),
+      child: new Center(
+        child: new Image.asset('assets/ic_settings.png'))
+    ));
   }
 }

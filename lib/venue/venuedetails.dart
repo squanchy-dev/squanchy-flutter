@@ -8,7 +8,7 @@ class VenueDetailsView extends StatelessWidget {
     return new CupertinoPageScaffold(
       navigationBar: const CupertinoNavigationBar(
         middle: const Text('Venue Details'),
-        trailing: const ExitButton(),
+        trailing: const SettingsButton(),
       ), child: new DecoratedBox(decoration: const BoxDecoration(color: const Color(0xFFEFEFF4))),
     );
   }

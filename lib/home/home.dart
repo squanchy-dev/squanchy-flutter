@@ -30,10 +30,9 @@ class _HomePageState extends State<HomePage> {
     final bottomBar = new CupertinoNavigationDemo();
 
     final appBar = new AppBar(
+      backgroundColor: const Color(0xFF673AB7),
       leading: new BackButton(),
-      actions: [
-      ],
-      bottom: new FlexibleAppBarBottomWidget
+      actions: [], bottom: new FlexibleAppBarBottomWidget
           .fromContext(context, bottomBar),
     );
 
@@ -48,7 +47,7 @@ class _HomePageState extends State<HomePage> {
       appBar: appBar,
       body: body,
       floatingActionButton: null,
-      backgroundColor: const Color(0xFFF1F1F1),
+      backgroundColor: const Color(0xFF673AB7),
     );
 
   }
