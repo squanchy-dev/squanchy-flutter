@@ -2,6 +2,7 @@ name: SquanchyFlutter
 description: Just like Squanchy, but in Flutter.
 
 dependencies:
+  cupertino_icons: ^0.1.1
   flutter:
     sdk: flutter
 
