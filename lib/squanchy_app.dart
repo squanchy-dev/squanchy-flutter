@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'eventdetails/eventdetails.dart';
+import 'home/home.dart';
 
 class SquanchyFlutterApp extends StatelessWidget {
   @override
@@ -39,7 +40,7 @@ class SquanchyFlutterApp extends StatelessWidget {
     return new MaterialApp(
         title: 'Squanchy Flutter',
         theme: theme,
-        home: new EventDetailsPage(),
+        home: new HomePage(),
         );
   }
 }
