@@ -1,5 +1,7 @@
 import 'package:SquanchyFlutter/utils/flexible_app_bar_widget.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:SquanchyFlutter/bottomnavigation/bottomnav.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}): super(key: key);
@@ -24,21 +26,15 @@ class _HomePageState extends State<HomePage> {
       fontWeight: FontWeight.w700,
     );
 
-    final appBarBottom = new Padding(
-      padding: new EdgeInsets.only(left: 72.0, right: 8.0, bottom: 8.0),
-      child: new Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [],
-        crossAxisAlignment: CrossAxisAlignment.start,
-      ),
-    );
+
+    final bottomBar = new CupertinoNavigationDemo();
 
     final appBar = new AppBar(
       leading: new BackButton(),
       actions: [
       ],
       bottom: new FlexibleAppBarBottomWidget
-          .fromContext(context, appBarBottom),
+          .fromContext(context, bottomBar),
     );
 
     final body = new ListView(
