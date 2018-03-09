@@ -17,7 +17,9 @@ class ScheduleView extends StatelessWidget {
         ]
     );
 
-    return new CupertinoPageScaffold(
-        navigationBar: appBar, child: new Container());
+    return new Scaffold(
+      appBar: appBar,
+      backgroundColor: const Color(0xFFF1F1F1),
+    );
   }
 }

@@ -51,7 +51,7 @@ class NavigationBar extends StatelessWidget {
                     return new ScheduleView();
                     break;
                   case 1:
-                    return new EventDetailsPage();
+                    return new FavouritesView();
                     break;
                   case 2:
                     return new VenueDetailsView();

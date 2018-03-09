@@ -8,17 +8,19 @@ class FavouritesView extends StatelessWidget {
   {
     final theme = Theme.of(context);
 
-  var appBar = new AppBar(
-          iconTheme: theme.iconTheme,
-          title: const Text('FAVOURITES'),
-          backgroundColor: Colors.blue,
-          actions: <Widget>[
-            new SettingsButton(),
-            new SearchButton()
-          ]
+    var appBar = new AppBar(
+        iconTheme: theme.iconTheme,
+        title: const Text('FAVOURITES'),
+        backgroundColor: Colors.blue,
+        actions: <Widget>[
+          new SettingsButton(),
+          new SearchButton()
+        ]
     );
 
-    return new CupertinoPageScaffold(
-      navigationBar: appBar, child: new Container());
+    return new Scaffold(
+      appBar: appBar,
+      backgroundColor: const Color(0xFFF1F1F1),
+    );
   }
 }
