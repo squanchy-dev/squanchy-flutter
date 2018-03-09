@@ -4,16 +4,20 @@ import 'package:flutter/material.dart';
 
 class ScheduleView extends StatelessWidget {
   @override
-  Widget build(BuildContext context)
-  {
+  Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    return new CupertinoPageScaffold(
-      navigationBar: new CupertinoNavigationBar(
-        middle: new Text('Schedule', style: theme.textTheme.headline.copyWith(color: Colors.white),),
-        trailing: const SettingsButton(),
+    var appBar = new AppBar(
+        iconTheme: theme.iconTheme,
+        title: const Text('SCHEDULE'),
         backgroundColor: Colors.blue,
-      ), child: new DecoratedBox(decoration: const BoxDecoration(color: const Color(0xFFEFEFF4))),
+        actions: <Widget>[
+          new SettingsButton(),
+          new SearchButton()
+        ]
     );
+
+    return new CupertinoPageScaffold(
+        navigationBar: appBar, child: new Container());
   }
 }

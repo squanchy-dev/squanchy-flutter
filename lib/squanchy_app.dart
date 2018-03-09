@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'eventdetails/eventdetails.dart';
-import 'home/home.dart';
 import 'package:SquanchyFlutter/bottomnavigation/bottomnav.dart';
 
 class SquanchyFlutterApp extends StatelessWidget {
@@ -40,8 +39,9 @@ class SquanchyFlutterApp extends StatelessWidget {
         );
 
     return new MaterialApp(
+        theme: theme,
         title: 'Squanchy Flutter',
-        home: new CupertinoNavigationDemo(),
+        home: new NavigationBar(),
         );
   }
 }

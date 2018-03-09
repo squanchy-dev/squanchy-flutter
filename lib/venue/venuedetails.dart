@@ -7,13 +7,17 @@ class VenueDetailsView extends StatelessWidget {
   Widget build(BuildContext context)
   {
     final theme = Theme.of(context);
+    var appBar = new AppBar(
+        iconTheme: theme.iconTheme,
+        title: const Text('VENUE DETAILS'),
+        backgroundColor: Colors.blue,
+        actions: <Widget>[
+          new SettingsButton(),
+          new SearchButton()
+        ]
+    );
 
     return new CupertinoPageScaffold(
-      navigationBar: new CupertinoNavigationBar(
-        middle: new Text('Venue Details',  style: theme.textTheme.headline.copyWith(color: Colors.white),),
-        trailing: const SettingsButton(),
-        backgroundColor: Colors.blue,
-      ), child: new DecoratedBox(decoration: const BoxDecoration(color: const Color(0xFFEFEFF4))),
-    );
+        navigationBar: appBar, child: new Container());
   }
 }
