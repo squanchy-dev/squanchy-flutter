@@ -5,6 +5,7 @@
 import 'dart:async';
 import 'dart:math' as math;
 
+import 'package:SquanchyFlutter/eventdetails/eventdetails.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:SquanchyFlutter/favourites/favourites.dart';
@@ -18,14 +19,16 @@ class NavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
+    var tabBarTextStyle = new TextStyle(color: Colors.blueAccent, fontFamily: 'Quicksand');
 
     var tabBar = new CupertinoTabBar(
         activeColor: theme.accentIconTheme.color,
         inactiveColor: theme.iconTheme.color,
+
         items: [
-          new BottomNavigationBarItem(icon: new Image.asset('assets/ic_schedule.png'), title: new Text("AAAA")),
-          new BottomNavigationBarItem(icon: new Image.asset('assets/ic_schedule.png'), title: new Text("BBBB")),
-          new BottomNavigationBarItem(icon: new Image.asset('assets/ic_schedule.png'), title: new Text("CCCC"))
+          new BottomNavigationBarItem(icon: new Image.asset('assets/ic_schedule_selected.png'), title: new Text("Schedule", style: tabBarTextStyle)),
+          new BottomNavigationBarItem(icon: new Image.asset('assets/ic_favourites_unselected.png'), title: new Text("Favourites", style: tabBarTextStyle)),
+          new BottomNavigationBarItem(icon: new Image.asset('assets/ic_venue_unselected.png'), title: new Text("Venue Details", style: tabBarTextStyle))
         ]);
 
 
@@ -48,7 +51,7 @@ class NavigationBar extends StatelessWidget {
                     return new ScheduleView();
                     break;
                   case 1:
-                    return new FavouritesView();
+                    return new EventDetailsPage();
                     break;
                   case 2:
                     return new VenueDetailsView();

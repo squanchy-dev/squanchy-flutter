@@ -26,6 +26,12 @@ flutter:
     - assets/ic_settings.png
     - assets/ic_schedule.png
     - assets/ic_search.png
+    - assets/ic_favourites_unselected.png
+    - assets/ic_schedule_unselected.png
+    - assets/ic_venue_unselected.png
+    - assets/ic_schedule_selected.png
+    - assets/ic_venue_selected.png
+    - assets/ic_favourites_selected.png
 
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
