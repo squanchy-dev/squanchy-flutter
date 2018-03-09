@@ -3,14 +3,21 @@
 // found in the LICENSE file.
 
 import 'dart:async';
-import 'dart:math' as math;
-
-import 'package:SquanchyFlutter/eventdetails/eventdetails.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:SquanchyFlutter/favourites/favourites.dart';
 import 'package:SquanchyFlutter/schedule/schedule.dart';
 import 'package:SquanchyFlutter/venue/venuedetails.dart';
+
+class Page<T> {
+  BottomNavigationBarItem navItem;
+  Function buildView;
+
+  Page(T f(), BottomNavigationBarItem item) {
+    buildView = f;
+    navItem = item;
+  }
+}
 
 class NavigationBar extends StatelessWidget {
 
@@ -18,23 +25,31 @@ class NavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     var theme = Theme.of(context);
     var tabBarTextStyle = new TextStyle(color: Colors.blueAccent, fontFamily: 'Quicksand');
+    
+    var scheduleItem = new BottomNavigationBarItem(icon: new Image.asset('assets/ic_schedule_selected.png'),
+        title: new Text("Schedule", style: tabBarTextStyle));
+    var favouritesItem = new BottomNavigationBarItem(icon: new Image.asset('assets/ic_favourites_unselected.png'),
+        title: new Text("Favourites", style: tabBarTextStyle));
+    var venueDetailsItem = new BottomNavigationBarItem(icon: new Image.asset('assets/ic_venue_unselected.png'),
+        title: new Text("Venue Details", style: tabBarTextStyle));
+
+    var pages = [
+      new Page<ScheduleView>(() => new ScheduleView(), scheduleItem),
+      new Page<FavouritesView>(() => new FavouritesView(), favouritesItem),
+      new Page<VenueDetailsView>(() => new VenueDetailsView(), venueDetailsItem),
+    ];
 
     var tabBar = new CupertinoTabBar(
         activeColor: theme.accentIconTheme.color,
         inactiveColor: theme.iconTheme.color,
-
-        items: [
-          new BottomNavigationBarItem(icon: new Image.asset('assets/ic_schedule_selected.png'), title: new Text("Schedule", style: tabBarTextStyle)),
-          new BottomNavigationBarItem(icon: new Image.asset('assets/ic_favourites_unselected.png'), title: new Text("Favourites", style: tabBarTextStyle)),
-          new BottomNavigationBarItem(icon: new Image.asset('assets/ic_venue_unselected.png'), title: new Text("Venue Details", style: tabBarTextStyle))
-        ]);
-
+        items: pages.map((page) => page.navItem)
+    );
 
     return new WillPopScope(
-      // Prevent swipe popping of this page. Use explicit exit buttons only.
-      onWillPop: () => new Future<bool>.value(true),
+      onWillPop: preventSwipePopping,
       child: new CupertinoTabScaffold(
         tabBar: tabBar,
         tabBuilder: (BuildContext context, int index) {
@@ -46,18 +61,7 @@ class NavigationBar extends StatelessWidget {
             ),
             child: new CupertinoTabView(
               builder: (BuildContext context) {
-                switch (index) {
-                  case 0:
-                    return new ScheduleView();
-                    break;
-                  case 1:
-                    return new FavouritesView();
-                    break;
-                  case 2:
-                    return new VenueDetailsView();
-                    break;
-                  default:
-                }
+                return pages[index].buildView();
               },
             ),
           );
@@ -65,6 +69,8 @@ class NavigationBar extends StatelessWidget {
       ),
     );
   }
+
+  Future<bool> preventSwipePopping() => new Future<bool>.value(true);
 }
 
 class SettingsButton extends StatelessWidget {
