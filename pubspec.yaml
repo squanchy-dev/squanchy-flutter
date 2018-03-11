@@ -2,6 +2,7 @@ name: SquanchyFlutter
 description: Just like Squanchy, but in Flutter.
 
 dependencies:
+  cupertino_icons: ^0.1.1
   flutter:
     sdk: flutter
 
@@ -21,6 +22,16 @@ flutter:
   # assets:
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
+  assets:
+    - assets/ic_settings.png
+    - assets/ic_schedule.png
+    - assets/ic_search.png
+    - assets/ic_favourites_unselected.png
+    - assets/ic_schedule_unselected.png
+    - assets/ic_venue_unselected.png
+    - assets/ic_schedule_selected.png
+    - assets/ic_venue_selected.png
+    - assets/ic_favourites_selected.png
 
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a

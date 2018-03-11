@@ -1,6 +1,5 @@
+import 'package:SquanchyFlutter/rootview.dart';
 import 'package:flutter/material.dart';
-
-import 'eventdetails/eventdetails.dart';
 
 class SquanchyFlutterApp extends StatelessWidget {
   @override
@@ -24,6 +23,7 @@ class SquanchyFlutterApp extends StatelessWidget {
           400: const Color(0xFF5FAFDF),
           700: const Color(0xFF4A9ED6),
         }),
+        backgroundColor: Colors.white,
         fontFamily: "Quicksand",
         );
 
@@ -31,15 +31,15 @@ class SquanchyFlutterApp extends StatelessWidget {
         textTheme: _theme.textTheme.copyWith(
             body1: _theme.textTheme.body1.copyWith(
                 fontWeight: FontWeight.w500,
-                color: const Color(0xFF4E4E4E),
+                color: Colors.blue,
                 ),
             ),
         );
 
     return new MaterialApp(
-        title: 'Squanchy Flutter',
         theme: theme,
-        home: new EventDetailsPage(),
+        title: 'Squanchy Flutter',
+        home: new RootView(),
         );
   }
 }
