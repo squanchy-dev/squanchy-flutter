@@ -23,7 +23,7 @@ class SquanchyFlutterApp extends StatelessWidget {
           400: const Color(0xFF5FAFDF),
           700: const Color(0xFF4A9ED6),
         }),
-        backgroundColor: Colors.white,
+        backgroundColor: const Color.fromRGBO(244, 244, 244, 1.0),
         fontFamily: "Quicksand",
         );
 

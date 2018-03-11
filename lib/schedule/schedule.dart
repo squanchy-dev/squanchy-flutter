@@ -22,7 +22,7 @@ class ScheduleView extends StatelessWidget {
     );
 
     final emptyStateLabel = new Text("test");
-    
+
     final body = new PageView(children: <Widget>[
       emptyState,
       emptyStateLabel
