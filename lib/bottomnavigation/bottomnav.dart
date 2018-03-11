@@ -42,10 +42,12 @@ class NavigationBar extends StatelessWidget {
       new Page<VenueDetailsView>(() => new VenueDetailsView(), venueDetailsItem),
     ];
 
+    var tabBarItems = pages.map((page) => page.navItem).toList();
+
     var tabBar = new CupertinoTabBar(
         activeColor: theme.accentIconTheme.color,
         inactiveColor: theme.iconTheme.color,
-        items: pages.map((page) => page.navItem)
+        items: tabBarItems
     );
 
     return new WillPopScope(

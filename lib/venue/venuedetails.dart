@@ -12,7 +12,7 @@ class VenueDetailsView extends StatelessWidget {
     var appBar = new AppBar(
         iconTheme: theme.iconTheme,
         title: const Text('VENUE DETAILS'),
-        backgroundColor: Colors.blue,
+        backgroundColor: theme.accentColor,
         actions: <Widget>[
           new SettingsButton(),
           new SearchButton()
@@ -21,7 +21,7 @@ class VenueDetailsView extends StatelessWidget {
 
     return new Scaffold(
       appBar: appBar,
-      backgroundColor: const Color(0xFFF1F1F1),
+      backgroundColor: theme.backgroundColor,
     );
   }
 }

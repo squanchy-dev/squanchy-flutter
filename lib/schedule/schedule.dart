@@ -10,7 +10,7 @@ class ScheduleView extends StatelessWidget {
     var appBar = new AppBar(
         iconTheme: theme.iconTheme,
         title: const Text('SCHEDULE'),
-        backgroundColor: Colors.blue,
+        backgroundColor: theme.accentColor,
         actions: <Widget>[
           new SettingsButton(),
           new SearchButton()
@@ -19,7 +19,7 @@ class ScheduleView extends StatelessWidget {
 
     return new Scaffold(
       appBar: appBar,
-      backgroundColor: const Color(0xFFF1F1F1),
+      backgroundColor: theme.backgroundColor,
     );
   }
 }
