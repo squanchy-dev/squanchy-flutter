@@ -1,4 +1,4 @@
-import 'package:SquanchyFlutter/bottomnavigation/bottomnav.dart';
+import 'package:SquanchyFlutter/utils/button_widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

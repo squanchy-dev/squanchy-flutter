@@ -1,7 +1,5 @@
+import 'package:SquanchyFlutter/rootview.dart';
 import 'package:flutter/material.dart';
-
-import 'eventdetails/eventdetails.dart';
-import 'package:SquanchyFlutter/bottomnavigation/bottomnav.dart';
 
 class SquanchyFlutterApp extends StatelessWidget {
   @override
@@ -41,7 +39,7 @@ class SquanchyFlutterApp extends StatelessWidget {
     return new MaterialApp(
         theme: theme,
         title: 'Squanchy Flutter',
-        home: new NavigationBar(),
+        home: new RootView(),
         );
   }
 }
