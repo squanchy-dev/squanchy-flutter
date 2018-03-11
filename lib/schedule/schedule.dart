@@ -18,11 +18,11 @@ class ScheduleView extends StatelessWidget {
     );
 
     final emptyState = new Container(child:
-      new Image.asset("nothing_here")
+      new Image.asset("assets/nothing_here.png")
     );
 
     final emptyStateLabel = new Text("test");
-
+    
     final body = new PageView(children: <Widget>[
       emptyState,
       emptyStateLabel
@@ -30,8 +30,8 @@ class ScheduleView extends StatelessWidget {
 
     return new Scaffold(
       appBar: appBar,
-      backgroundColor: theme.backgroundColor,
       body: body,
+      backgroundColor: theme.backgroundColor,
     );
   }
 }
