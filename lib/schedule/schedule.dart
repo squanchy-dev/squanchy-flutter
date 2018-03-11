@@ -17,9 +17,21 @@ class ScheduleView extends StatelessWidget {
         ]
     );
 
+    final emptyState = new Container(child:
+      new Image.asset("nothing_here")
+    );
+
+    final emptyStateLabel = new Text("test");
+
+    final body = new PageView(children: <Widget>[
+      emptyState,
+      emptyStateLabel
+    ],);
+
     return new Scaffold(
       appBar: appBar,
       backgroundColor: theme.backgroundColor,
+      body: body,
     );
   }
 }
