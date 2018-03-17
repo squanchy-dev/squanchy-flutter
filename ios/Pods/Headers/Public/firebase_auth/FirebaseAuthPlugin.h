@@ -1,0 +1,1 @@
+../../../../../../../.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.2.5/ios/Classes/FirebaseAuthPlugin.h

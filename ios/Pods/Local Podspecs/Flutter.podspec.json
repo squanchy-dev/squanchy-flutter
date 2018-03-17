@@ -5,8 +5,7 @@
   "description": "Flutter provides an easy and productive way to build and deploy high-performance mobile apps for Android and iOS.",
   "homepage": "https://flutter.io",
   "license": {
-    "type": "MIT",
-    "file": "../../../../../LICENSE"
+    "type": "MIT"
   },
   "authors": {
     "Flutter Dev Team": "flutter-dev@googlegroups.com"

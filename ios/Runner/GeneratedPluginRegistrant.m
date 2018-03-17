@@ -8,6 +8,7 @@
 #import <firebase_database/FirebaseDatabasePlugin.h>
 #import <firebase_storage/FirebaseStoragePlugin.h>
 #import <google_sign_in/GoogleSignInPlugin.h>
+#import <image_picker/ImagePickerPlugin.h>
 
 @implementation GeneratedPluginRegistrant
 
@@ -17,6 +18,7 @@
   [FirebaseDatabasePlugin registerWithRegistrar:[registry registrarForPlugin:@"FirebaseDatabasePlugin"]];
   [FirebaseStoragePlugin registerWithRegistrar:[registry registrarForPlugin:@"FirebaseStoragePlugin"]];
   [GoogleSignInPlugin registerWithRegistrar:[registry registrarForPlugin:@"GoogleSignInPlugin"]];
+  [ImagePickerPlugin registerWithRegistrar:[registry registrarForPlugin:@"ImagePickerPlugin"]];
 }
 
 @end

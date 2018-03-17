@@ -1,0 +1,1 @@
+../../../../../../../.pub-cache/hosted/pub.dartlang.org/google_sign_in-0.3.1/ios/Classes/GoogleSignInPlugin.h

@@ -1,0 +1,1 @@
+../../../../../../../.pub-cache/hosted/pub.dartlang.org/firebase_database-0.0.12/ios/Classes/FirebaseDatabasePlugin.h

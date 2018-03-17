@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:SquanchyFlutter/favourites/favourites.dart';
 import 'package:SquanchyFlutter/schedule/schedule.dart';
 import 'package:SquanchyFlutter/venue/venuedetails.dart';
+import 'package:google_sign_in/google_sign_in.dart';                   // new
+import 'package:firebase_auth/firebase_auth.dart';                // new
 
 class Page<T> {
   BottomNavigationBarItem navItem;
@@ -18,6 +20,9 @@ class Page<T> {
     navItem = item;
   }
 }
+
+final googleSignIn = new GoogleSignIn();
+final auth = FirebaseAuth.instance;
 
 class RootView extends StatelessWidget {
 
@@ -50,7 +55,9 @@ class RootView extends StatelessWidget {
         items: tabBarItems
     );
 
-    return new WillPopScope(
+    _ensureLoggedIn();
+
+        return new WillPopScope(
       onWillPop: preventSwipePopping,
       child: new CupertinoTabScaffold(
         tabBar: tabBar,
@@ -70,6 +77,10 @@ class RootView extends StatelessWidget {
         },
       ),
     );
+  }
+
+  Future<Null> _ensureLoggedIn() async {
+    await auth.signInAnonymously();
   }
 
   Future<bool> preventSwipePopping() => new Future<bool>.value(true);

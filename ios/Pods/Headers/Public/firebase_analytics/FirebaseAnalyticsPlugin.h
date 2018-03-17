@@ -1,0 +1,1 @@
+../../../../../../../.pub-cache/hosted/pub.dartlang.org/firebase_analytics-0.0.4/ios/Classes/FirebaseAnalyticsPlugin.h

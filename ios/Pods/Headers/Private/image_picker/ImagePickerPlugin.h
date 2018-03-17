@@ -1,0 +1,1 @@
+../../../../../../../.pub-cache/hosted/pub.dartlang.org/image_picker-0.1.1/ios/Classes/ImagePickerPlugin.h
