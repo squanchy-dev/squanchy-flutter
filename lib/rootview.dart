@@ -10,6 +10,7 @@ import 'package:SquanchyFlutter/schedule/schedule.dart';
 import 'package:SquanchyFlutter/venue/venuedetails.dart';
 import 'package:google_sign_in/google_sign_in.dart';                   // new
 import 'package:firebase_auth/firebase_auth.dart';                // new
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Page<T> {
   BottomNavigationBarItem navItem;
@@ -56,6 +57,8 @@ class RootView extends StatelessWidget {
     );
 
     _ensureLoggedIn();
+
+
 
         return new WillPopScope(
       onWillPop: preventSwipePopping,
