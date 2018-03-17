@@ -28,7 +28,7 @@ class RootView extends StatelessWidget {
 
     var theme = Theme.of(context);
     var tabBarTextStyle = new TextStyle(color: Colors.blueAccent, fontFamily: 'Quicksand');
-    
+
     var scheduleItem = new BottomNavigationBarItem(icon: new Image.asset('assets/ic_schedule_selected.png'),
         title: new Text("Schedule", style: tabBarTextStyle));
     var favouritesItem = new BottomNavigationBarItem(icon: new Image.asset('assets/ic_favourites_unselected.png'),
