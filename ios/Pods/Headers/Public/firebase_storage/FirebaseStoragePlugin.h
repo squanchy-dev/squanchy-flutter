@@ -1,1 +1,0 @@
-../../../../../../../.pub-cache/hosted/pub.dartlang.org/firebase_storage-0.0.5/ios/Classes/FirebaseStoragePlugin.h
