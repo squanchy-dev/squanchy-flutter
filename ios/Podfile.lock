@@ -107,7 +107,7 @@ PODS:
   - Protobuf (3.5.0)
 
 DEPENDENCIES:
-  - cloud_firestore (from `/Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.3.0/ios`)
+  - cloud_firestore (from `/Users/niamhpower/.pub-cache/git/flutter_plugins-9cabcc57e63fbc9be4fafee08e6435a1a8c71d61/packages/cloud_firestore/ios`)
   - firebase_analytics (from `/Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-0.3.0/ios`)
   - firebase_auth (from `/Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.5.1/ios`)
   - Flutter (from `/Users/niamhpower/flutter/bin/cache/artifacts/engine/ios`)
@@ -115,7 +115,7 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   cloud_firestore:
-    :path: /Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.3.0/ios
+    :path: /Users/niamhpower/.pub-cache/git/flutter_plugins-9cabcc57e63fbc9be4fafee08e6435a1a8c71d61/packages/cloud_firestore/ios
   firebase_analytics:
     :path: /Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-0.3.0/ios
   firebase_auth:

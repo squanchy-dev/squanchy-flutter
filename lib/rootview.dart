@@ -25,6 +25,10 @@ class Page<T> {
 final googleSignIn = new GoogleSignIn();
 final auth = FirebaseAuth.instance;
 
+class VenueInformation {
+
+}
+
 class RootView extends StatelessWidget {
 
   static const String routeName = '/cupertino/navigation';
@@ -57,9 +61,7 @@ class RootView extends StatelessWidget {
     );
 
     _ensureLoggedIn();
-
-   // var conferenceInfo = Firestore.instance.collection("conference_info").document([""])
-
+    _getDoc();
 
     return new WillPopScope(
       onWillPop: preventSwipePopping,
@@ -85,6 +87,10 @@ class RootView extends StatelessWidget {
 
   Future<Null> _ensureLoggedIn() async {
     await auth.signInAnonymously();
+  }
+
+  Future<Null> _getDoc() async {
+    await Firestore.instance.collection("conference_info").getDocuments();
   }
 
   Future<bool> preventSwipePopping() => new Future<bool>.value(true);
