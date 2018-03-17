@@ -58,9 +58,7 @@ class RootView extends StatelessWidget {
 
     _ensureLoggedIn();
 
-
-
-        return new WillPopScope(
+    return new WillPopScope(
       onWillPop: preventSwipePopping,
       child: new CupertinoTabScaffold(
         tabBar: tabBar,
