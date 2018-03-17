@@ -6,8 +6,13 @@ class EventDay {
   Day day;
   List<Event> events;
 
-  EventDay(DocumentSnapshot doc) {
+  EventDay(dynamic doc) {
     day = new Day(doc['day']);
+    List<dynamic> array = doc['events'];
+
+    events = array.map((doc) {
+      return new Event(doc);
+    }).toList();
   }
 }
 
@@ -37,6 +42,10 @@ class Event {
   Level level;
   Place place;
   String id;
+
+  Event(dynamic doc) {
+    title = doc['title'];
+  }
 }
 
 class Track {

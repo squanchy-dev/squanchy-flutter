@@ -1,41 +1,8 @@
 import 'package:SquanchyFlutter/models/EventModels.dart';
-import 'package:SquanchyFlutter/schedule/ListModel.dart';
 import 'package:SquanchyFlutter/utils/button_widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-enum EventType {
-  talk,
-  workshop
-}
-
-class Submission {
-
-}
-
-class Event {
-   EventType eventType;
-   String title;
-
-   Event(EventType type, String t) {
-     eventType = type;
-     title = t;
-   }
-}
-
-class EventCard extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new Card(child: new Text('test'));
-  }
-}
-
-_printDayStuff(DocumentSnapshot doc) {
-  print('${doc['day']}');
-  var day = new Day(doc['day']);
-  print('${day.id}');
-}
 
 class EventList extends StatelessWidget {
   @override
@@ -48,9 +15,10 @@ class EventList extends StatelessWidget {
         if (!snapshot.hasData) return const Text('Loading...');
         return new ListView(
           children: snapshot.data.documents.map((DocumentSnapshot document) {
-            var day = new Day(document['day']);
+            var event = new EventDay(document);
+            print('${event.events[0].title}');
             return new ListTile(
-              title: new Text(day.dateTime.toIso8601String()),
+              title: new Text(event.day.dateTime.toIso8601String()),
             );
           }).toList(),
         );
