@@ -58,9 +58,10 @@ class RootView extends StatelessWidget {
 
     _ensureLoggedIn();
 
+   // var conferenceInfo = Firestore.instance.collection("conference_info").document([""])
 
 
-        return new WillPopScope(
+    return new WillPopScope(
       onWillPop: preventSwipePopping,
       child: new CupertinoTabScaffold(
         tabBar: tabBar,

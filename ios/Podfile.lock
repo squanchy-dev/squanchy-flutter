@@ -1,16 +1,28 @@
 PODS:
-  - Firebase/Auth (3.17.0):
+  - BoringSSL (10.0):
+    - BoringSSL/Implementation (= 10.0)
+    - BoringSSL/Interface (= 10.0)
+  - BoringSSL/Implementation (10.0):
+    - BoringSSL/Interface (= 10.0)
+  - BoringSSL/Interface (10.0)
+  - cloud_firestore (0.0.1):
+    - Firebase/Auth
     - Firebase/Core
-    - FirebaseAuth (= 3.1.1)
-  - Firebase/Core (3.17.0):
-    - FirebaseAnalytics (= 3.9.0)
-    - FirebaseCore (= 3.6.0)
-  - Firebase/Database (3.17.0):
+    - Firebase/Database
+    - Firebase/Firestore
+    - Flutter
+  - Firebase/Auth (4.10.1):
     - Firebase/Core
-    - FirebaseDatabase (= 3.1.2)
-  - Firebase/Storage (3.17.0):
+    - FirebaseAuth (= 4.4.4)
+  - Firebase/Core (4.10.1):
+    - FirebaseAnalytics (= 4.1.0)
+    - FirebaseCore (= 4.0.17)
+  - Firebase/Database (4.10.1):
     - Firebase/Core
-    - FirebaseStorage (= 1.1.0)
+    - FirebaseDatabase (= 4.1.5)
+  - Firebase/Firestore (4.10.1):
+    - Firebase/Core
+    - FirebaseFirestore (= 0.10.3)
   - firebase_analytics (0.0.1):
     - Firebase/Core
     - Flutter
@@ -18,29 +30,29 @@ PODS:
     - Firebase/Auth
     - Firebase/Core
     - Flutter
-  - firebase_database (0.0.1):
-    - Firebase/Database
-    - Flutter
-  - firebase_storage (0.0.1):
-    - Firebase/Storage
-    - Flutter
-  - FirebaseAnalytics (3.9.0):
-    - FirebaseCore (~> 3.6)
-    - FirebaseInstanceID (~> 1.0)
+  - FirebaseAnalytics (4.1.0):
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseAuth (3.1.1):
-    - FirebaseAnalytics (~> 3.7)
+    - nanopb (~> 0.3)
+  - FirebaseAuth (4.4.4):
+    - FirebaseAnalytics (~> 4.1)
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseCore (3.6.0):
+  - FirebaseCore (4.0.17):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseDatabase (3.1.2):
-    - FirebaseAnalytics (~> 3.7)
-  - FirebaseInstanceID (1.0.10):
-    - FirebaseCore (~> 3.6)
-  - FirebaseStorage (1.1.0):
-    - FirebaseAnalytics (~> 3.7)
-    - GTMSessionFetcher/Core (~> 1.1)
+  - FirebaseDatabase (4.1.5):
+    - FirebaseAnalytics (~> 4.1)
+    - FirebaseCore (~> 4.0)
+    - leveldb-library (~> 1.18)
+  - FirebaseFirestore (0.10.3):
+    - FirebaseAnalytics (~> 4.1)
+    - FirebaseCore (~> 4.0)
+    - gRPC-ProtoRPC (~> 1.0)
+    - leveldb-library (~> 1.18)
+    - Protobuf (~> 3.5)
+  - FirebaseInstanceID (2.0.9):
+    - FirebaseCore (~> 4.0)
   - Flutter (1.0.0)
   - google_sign_in (0.0.1):
     - Flutter
@@ -60,6 +72,25 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.3)
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.3)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.3)
+  - gRPC (1.10.0):
+    - gRPC-RxLibrary (= 1.10.0)
+    - gRPC/Main (= 1.10.0)
+  - gRPC-Core (1.10.0):
+    - gRPC-Core/Implementation (= 1.10.0)
+    - gRPC-Core/Interface (= 1.10.0)
+  - gRPC-Core/Implementation (1.10.0):
+    - BoringSSL (~> 10.0)
+    - gRPC-Core/Interface (= 1.10.0)
+    - nanopb (~> 0.3)
+  - gRPC-Core/Interface (1.10.0)
+  - gRPC-ProtoRPC (1.10.0):
+    - gRPC (= 1.10.0)
+    - gRPC-RxLibrary (= 1.10.0)
+    - Protobuf (~> 3.0)
+  - gRPC-RxLibrary (1.10.0)
+  - gRPC/Main (1.10.0):
+    - gRPC-Core (= 1.10.0)
+    - gRPC-RxLibrary (= 1.10.0)
   - GTMOAuth2 (1.1.6):
     - GTMSessionFetcher (~> 1.1)
   - GTMSessionFetcher (1.1.14):
@@ -67,54 +98,59 @@ PODS:
   - GTMSessionFetcher/Core (1.1.14)
   - GTMSessionFetcher/Full (1.1.14):
     - GTMSessionFetcher/Core (= 1.1.14)
-  - image_picker (0.0.1):
-    - Flutter
+  - leveldb-library (1.20)
+  - nanopb (0.3.8):
+    - nanopb/decode (= 0.3.8)
+    - nanopb/encode (= 0.3.8)
+  - nanopb/decode (0.3.8)
+  - nanopb/encode (0.3.8)
+  - Protobuf (3.5.0)
 
 DEPENDENCIES:
-  - firebase_analytics (from `/Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-0.0.4/ios`)
-  - firebase_auth (from `/Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.2.5/ios`)
-  - firebase_database (from `/Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/firebase_database-0.0.12/ios`)
-  - firebase_storage (from `/Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/firebase_storage-0.0.5/ios`)
+  - cloud_firestore (from `/Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.3.0/ios`)
+  - firebase_analytics (from `/Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-0.3.0/ios`)
+  - firebase_auth (from `/Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.5.1/ios`)
   - Flutter (from `/Users/niamhpower/flutter/bin/cache/artifacts/engine/ios`)
-  - google_sign_in (from `/Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/google_sign_in-0.3.1/ios`)
-  - image_picker (from `/Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/image_picker-0.1.1/ios`)
+  - google_sign_in (from `/Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/google_sign_in-3.0.0/ios`)
 
 EXTERNAL SOURCES:
+  cloud_firestore:
+    :path: /Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.3.0/ios
   firebase_analytics:
-    :path: /Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-0.0.4/ios
+    :path: /Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-0.3.0/ios
   firebase_auth:
-    :path: /Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.2.5/ios
-  firebase_database:
-    :path: /Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/firebase_database-0.0.12/ios
-  firebase_storage:
-    :path: /Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/firebase_storage-0.0.5/ios
+    :path: /Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.5.1/ios
   Flutter:
     :path: /Users/niamhpower/flutter/bin/cache/artifacts/engine/ios
   google_sign_in:
-    :path: /Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/google_sign_in-0.3.1/ios
-  image_picker:
-    :path: /Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/image_picker-0.1.1/ios
+    :path: /Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/google_sign_in-3.0.0/ios
 
 SPEC CHECKSUMS:
-  Firebase: 4b66b5b59c43edac745b87f0c87e42cdd0279c13
-  firebase_analytics: 8f2570c7175ac9e1138e0b6e3451860da0f76b5f
-  firebase_auth: cc5d7d8cf47757c74bdea7ab0022430480d5695b
-  firebase_database: a5b2f9b0ebc0522135032c93000d0c1184116eb1
-  firebase_storage: d160b0c01316d9c54e4c1d99e318cbbc638746d1
-  FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
-  FirebaseAuth: cc8a1824170adbd351edb7f994490a3fb5c18be6
-  FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
-  FirebaseDatabase: 05c96d7b43a7368dc91c07791adb49683e1738d1
-  FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
-  FirebaseStorage: a5c55b23741a49a72af8f30f95b3bb5ddbeda12d
+  BoringSSL: 32764dbaf5f5888cf51fbaa172a010126b41bcd4
+  cloud_firestore: 00886d0b271577dfadd33be97d6bb6095f49499d
+  Firebase: 92c6ba593e32db0defde464a9adc981d5cb49f97
+  firebase_analytics: ad15e54404e21983408c8b0c24a9d11247be7f33
+  firebase_auth: 499d5bfb249606a276f6bddf292a3b2d44139f75
+  FirebaseAnalytics: 3dfae28d4a5e06f86c4fae830efc2ad3fadb19bc
+  FirebaseAuth: d040bb7a9db6dfc29d0e7ec82d48be51352b2581
+  FirebaseCore: 872307b001bbefda1dfa0dbfffa50a6919023d4a
+  FirebaseDatabase: 5f0bc6134c5c237cf55f9e1249d406770a75eafd
+  FirebaseFirestore: 41d1ec1f37963b63f8bbbcdb94d8545d4c6c1b42
+  FirebaseInstanceID: d2058a35e9bebda1b6dd42486b84917bde552a9d
   Flutter: 9d0fac939486c9aba2809b7982dfdbb47a7b0296
-  google_sign_in: 4efa54380d5ef07e98a58fb24c8a7f9c51867222
+  google_sign_in: 64523e9b42c475b01b726ff87e450425ea6d15bc
   GoogleSignIn: d9ef55b10f0aa401a5de2747f59b725e4b9732ac
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
+  gRPC: f54f0e6d603052b4562447da442ce2ff30bcdacc
+  gRPC-Core: a030b1678ded49c88ec5ba7c90ee8ee5f47ec6e1
+  gRPC-ProtoRPC: 22712b23eb1bda656a59715fa5c1da0ea1493ea4
+  gRPC-RxLibrary: a41a4652d220f230ba1c0491a94ce2ee04c6180a
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: 390ea358e5a0d0133153806f744662dad933d06b
-  image_picker: ee00aab0487cedc80a304085219503cc6d0f2e22
+  leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
 
-PODFILE CHECKSUM: 407db753d18e8726329521f96a8fa0bebaef3f42
+PODFILE CHECKSUM: 35947b2c1cae92ea15d99c3339306cd184068dd6
 
 COCOAPODS: 1.4.0

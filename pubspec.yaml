@@ -5,13 +5,10 @@ dependencies:
   cupertino_icons: ^0.1.1
   flutter:
     sdk: flutter
-  image_picker: 0.1.1                                             # new
-  google_sign_in: ^0.3.1                                           # new
-  firebase_analytics: 0.0.4                                       # new
-  firebase_auth: ^0.2.0                                            # new
-  firebase_database: 0.0.12                                       # new
-  firebase_storage: 0.0.5                                         # new
-  cloud_firestore: ^0.3.0
+  google_sign_in: 3.0.0
+  firebase_analytics: 0.3.0
+  firebase_auth: 0.5.1
+  cloud_firestore: 0.3.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
