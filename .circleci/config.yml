@@ -1,0 +1,61 @@
+version: 2
+
+jobs:
+  "flutter build":
+    working_directory: ~/squanchy-android
+
+    docker:
+      - image: cirrusci/flutter
+
+    environment:
+      ANDROID_HOME: /opt/android/sdk
+      APPLICATION_ID: net.squanchy.example
+
+    steps:
+      - checkout
+
+      # Run Flutter Doctor
+      - run:
+          name: Flutter Doctor
+          command: flutter doctor
+
+      # Get all packages then run Flutter build
+      - run:
+          name: Get Pub packages
+          command: flutter packages get
+      - run:
+          name: Build Android APK (debug)
+          command: flutter build apk -v
+
+  "flutter analyze":
+    working_directory: ~/squanchy-android
+
+    docker:
+      - image: cirrusci/flutter
+
+    environment:
+      ANDROID_HOME: /opt/android/sdk
+      APPLICATION_ID: net.squanchy.example
+
+    steps:
+      - checkout
+
+      # Run Flutter Doctor
+      - run:
+          name: Flutter Doctor
+          command: flutter doctor
+
+      # Get all packages then run Flutter Analyzer
+      - run:
+          name: Get Pub packages
+          command: flutter packages get
+      - run:
+          name: Flutter Analyzer
+          command: flutter analyze
+
+workflows:
+  version: 2
+  build_and_analyze:
+    jobs:
+      - "flutter build"
+      - "flutter analyze"
