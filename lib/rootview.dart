@@ -8,9 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:SquanchyFlutter/favourites/favourites.dart';
 import 'package:SquanchyFlutter/schedule/schedule.dart';
 import 'package:SquanchyFlutter/venue/venuedetails.dart';
-import 'package:google_sign_in/google_sign_in.dart';                   // new
-import 'package:firebase_auth/firebase_auth.dart';                // new
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Page<T> {
   BottomNavigationBarItem navItem;
@@ -25,9 +24,19 @@ class Page<T> {
 final googleSignIn = new GoogleSignIn();
 final auth = FirebaseAuth.instance;
 
-class RootView extends StatelessWidget {
+class RootViewPage extends StatefulWidget {
+  RootViewPage({Key key}) : super(key: key);
 
-  static const String routeName = '/cupertino/navigation';
+  @override
+  _RootViewPageState createState() => new _RootViewPageState(new GoogleSignIn(), FirebaseAuth.instance);
+}
+
+class _RootViewPageState extends State<RootViewPage> {
+  _RootViewPageState(this.googleSignIn, this.firebaseAuth);
+
+  final scaffoldKey = new GlobalKey<ScaffoldState>();
+  final GoogleSignIn googleSignIn;
+  final FirebaseAuth firebaseAuth;
 
   @override
   Widget build(BuildContext context) {
@@ -58,9 +67,7 @@ class RootView extends StatelessWidget {
 
     _ensureLoggedIn();
 
-
-
-        return new WillPopScope(
+    return new WillPopScope(
       onWillPop: preventSwipePopping,
       child: new CupertinoTabScaffold(
         tabBar: tabBar,
@@ -88,3 +95,6 @@ class RootView extends StatelessWidget {
 
   Future<bool> preventSwipePopping() => new Future<bool>.value(true);
 }
+
+final googleSignIn = new GoogleSignIn();
+final auth = FirebaseAuth.instance;
