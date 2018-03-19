@@ -5,13 +5,14 @@ dependencies:
   cupertino_icons: ^0.1.1
   flutter:
     sdk: flutter
-  image_picker: 0.1.1
-  google_sign_in: ^0.3.1
-  firebase_analytics: 0.0.4
-  firebase_auth: ^0.2.0
-  firebase_database: 0.0.12
-  firebase_storage: 0.0.5                                        
-  cloud_firestore: ^0.3.0
+  google_sign_in: 3.0.0
+  firebase_analytics: 0.3.0
+  firebase_auth: 0.5.1
+  cloud_firestore:
+    git:
+      url: git@github.com:theshiftstudio/flutter_plugins.git
+      ref: 9cabcc57e63fbc9be4fafee08e6435a1a8c71d61
+      path: packages/cloud_firestore
 
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec

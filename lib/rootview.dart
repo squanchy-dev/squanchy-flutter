@@ -95,6 +95,3 @@ class _RootViewPageState extends State<RootViewPage> {
 
   Future<bool> preventSwipePopping() => new Future<bool>.value(true);
 }
-
-final googleSignIn = new GoogleSignIn();
-final auth = FirebaseAuth.instance;
