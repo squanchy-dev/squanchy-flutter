@@ -5,7 +5,7 @@ jobs:
     working_directory: ~/squanchy-android
 
     docker:
-      - image: martinlowinski/flutter-android-sdk
+      - image: cirrusci/flutter
 
     environment:
       ANDROID_HOME: /opt/android/sdk
@@ -31,7 +31,7 @@ jobs:
     working_directory: ~/squanchy-android
 
     docker:
-      - image: martinlowinski/flutter-android-sdk
+      - image: cirrusci/flutter
 
     environment:
       ANDROID_HOME: /opt/android/sdk
