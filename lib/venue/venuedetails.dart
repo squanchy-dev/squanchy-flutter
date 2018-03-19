@@ -1,4 +1,5 @@
 import 'package:SquanchyFlutter/utils/button_widgets.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +10,10 @@ class VenueDetailsView extends StatelessWidget {
   {
     final theme = Theme.of(context);
 
+    Firestore.instance.collection('conference_info').getDocuments().asStream().listen(
+        (data) => print('${data.documents[0]['name']}')
+    );
+
     var appBar = new AppBar(
         iconTheme: theme.iconTheme,
         title: const Text('VENUE DETAILS'),
@@ -18,6 +23,7 @@ class VenueDetailsView extends StatelessWidget {
           new SearchButton()
         ]
     );
+
 
     return new Scaffold(
       appBar: appBar,
