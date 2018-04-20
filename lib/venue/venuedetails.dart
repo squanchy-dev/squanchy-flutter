@@ -1,3 +1,4 @@
+import 'package:SquanchyFlutter/utils/DataService.dart';
 import 'package:SquanchyFlutter/utils/button_widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
@@ -10,7 +11,9 @@ class VenueDetailsView extends StatelessWidget {
   {
     final theme = Theme.of(context);
 
-    Firestore.instance.collection('conference_info').getDocuments().asStream().listen(
+    FirestoreService service = new FirestoreService(Firestore.instance);
+    
+    service.getDataStream('conference_info').listen(
         (data) => print('${data.documents[0]['name']}')
     );
 
