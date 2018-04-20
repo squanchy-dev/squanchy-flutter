@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:SquanchyFlutter/favourites/favourites.dart';
 import 'package:SquanchyFlutter/schedule/schedule.dart';
 import 'package:SquanchyFlutter/venue/venuedetails.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Page<T> {
   BottomNavigationBarItem navItem;
@@ -19,9 +21,22 @@ class Page<T> {
   }
 }
 
-class RootView extends StatelessWidget {
+final googleSignIn = new GoogleSignIn();
+final auth = FirebaseAuth.instance;
 
-  static const String routeName = '/cupertino/navigation';
+class RootViewPage extends StatefulWidget {
+  RootViewPage({Key key}) : super(key: key);
+
+  @override
+  _RootViewPageState createState() => new _RootViewPageState(new GoogleSignIn(), FirebaseAuth.instance);
+}
+
+class _RootViewPageState extends State<RootViewPage> {
+  _RootViewPageState(this.googleSignIn, this.firebaseAuth);
+
+  final scaffoldKey = new GlobalKey<ScaffoldState>();
+  final GoogleSignIn googleSignIn;
+  final FirebaseAuth firebaseAuth;
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +65,8 @@ class RootView extends StatelessWidget {
         items: tabBarItems
     );
 
+    _ensureLoggedIn();
+
     return new WillPopScope(
       onWillPop: preventSwipePopping,
       child: new CupertinoTabScaffold(
@@ -70,6 +87,10 @@ class RootView extends StatelessWidget {
         },
       ),
     );
+  }
+
+  Future<Null> _ensureLoggedIn() async {
+    await auth.signInAnonymously();
   }
 
   Future<bool> preventSwipePopping() => new Future<bool>.value(true);
