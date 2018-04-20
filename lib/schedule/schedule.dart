@@ -16,9 +16,8 @@ class EventList extends StatelessWidget {
         return new ListView(
           children: snapshot.data.documents.map((DocumentSnapshot document) {
             var event = new EventDay(document);
-            print('${event.events[0].title}');
             return new ListTile(
-              title: new Text(event.day.dateTime.toIso8601String()),
+              title: new Text(event.events[0].title),
             );
           }).toList(),
         );
@@ -62,7 +61,7 @@ class ScheduleView extends StatelessWidget {
 
     return new Scaffold(
       appBar: appBar,
-      body: body,
+      body: new EventList(),
       backgroundColor: theme.backgroundColor,
     );
   }
