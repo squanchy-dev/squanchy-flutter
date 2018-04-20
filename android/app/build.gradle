@@ -45,4 +45,4 @@ dependencies {
     androidTestCompile 'com.android.support.test:rules:0.5'
 }
 
-apply plugin: 'com.google.gms.google-services'                        //new
+apply plugin: 'com.google.gms.google-services'

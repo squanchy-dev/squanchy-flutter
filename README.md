@@ -1,8 +1,8 @@
-# squanchy_flutter
+# Squanchy Flutter
+[![Apache 2 license](https://img.shields.io/github/license/squanchy-dev/squanchy-flutter.svg?style=for-the-badge)](https://github.com/squanchy-dev/squanchy-flutter/blob/master/LICENSE)
 
-A new flutter project.
+Squanchy is an open source schedule platform for conferences.
 
-## Getting Started
+This repository contains the Flutter port of the [Squanchy Android](https://github.com/squanchy-dev/squanchy-android) app.
 
-For help getting started with Flutter, view our online
-[documentation](http://flutter.io/).
+The project is maintained by independent contributors.
