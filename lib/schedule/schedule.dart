@@ -94,18 +94,6 @@ class EventList extends StatelessWidget {
 class ScheduleView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
-    var appBar = new AppBar(
-        iconTheme: theme.iconTheme,
-        title: const Text('SCHEDULE'),
-        backgroundColor: theme.accentColor,
-        actions: <Widget>[
-          new SettingsButton(),
-          new SearchButton()
-        ]
-    );
-
     return new EventList();
   }
 }
