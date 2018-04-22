@@ -6,13 +6,20 @@ import 'package:flutter/material.dart';
 
 class EventList extends StatelessWidget {
 
-  DefaultTabController _createTabs(List<String> days, List<List<Event>> events) {
+  DefaultTabController _createTabs(BuildContext context, List<String> days, List<List<Event>> events) {
+    var theme = Theme.of(context);
     return new DefaultTabController(length: days.length, child:
       new Scaffold(
         appBar: new AppBar(
-          backgroundColor: Colors.blueAccent,
-          bottom: new TabBar(
-            tabs: days.map((day) => new Tab(text: day)).toList()
+            iconTheme: theme.iconTheme,
+            title: const Text('SCHEDULE'),
+           backgroundColor: theme.accentColor,
+            actions: <Widget>[
+              new SettingsButton(),
+              new SearchButton()
+            ],
+            bottom: new TabBar(
+              tabs: days.map((day) => new Tab(text: day)).toList()
           ),
         ),
         body: new TabBarView(
@@ -58,7 +65,7 @@ class EventList extends StatelessWidget {
 
         var eventDays = days.map((day) => _getWeekday(day.day.dateTime.weekday)).toList();
         var events = days.map((day) => day.events).toList();
-        return _createTabs(eventDays, events);
+        return _createTabs(context, eventDays, events);
       },
     );
   }
@@ -99,10 +106,6 @@ class ScheduleView extends StatelessWidget {
         ]
     );
 
-    return new Scaffold(
-      appBar: appBar,
-      body: new EventList(),
-      backgroundColor: theme.backgroundColor,
-    );
+    return new EventList();
   }
 }
