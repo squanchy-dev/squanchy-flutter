@@ -6,33 +6,45 @@ import 'package:flutter/material.dart';
 
 class EventList extends StatelessWidget {
 
-  DefaultTabController _createTabs(List<String> days) {
+  DefaultTabController _createTabs(List<String> days, List<List<Event>> events) {
     return new DefaultTabController(length: days.length, child:
-    new Scaffold(
-      appBar: new AppBar(
-        backgroundColor: Colors.blueAccent,
-        bottom: new TabBar(
-          tabs: days.map((day) => new Tab(text: day)).toList()
+      new Scaffold(
+        appBar: new AppBar(
+          backgroundColor: Colors.blueAccent,
+          bottom: new TabBar(
+            tabs: days.map((day) => new Tab(text: day)).toList()
           ),
         ),
-      )
+        body: new TabBarView(
+          children: events.map((day) {
+            return _createScheduleCards(day);
+          }).toList()
+        ),
+      ),
     );
   }
 
-  /**
-   * new ListView(
-      children: snapshot.data.documents.map((DocumentSnapshot document) {
-      var event = new EventDay(document);
-      print(event.events[0].description);
+  ListView _createScheduleCards(List<Event> events) {
+    return new ListView(
+        children: events.map((event) {
+          return new ListTile(
+            title: new Text(event.title),
+          );
+        }).toList(),
+    );
+  }
 
-      return new ListTile(
-      title: new Text(_getWeekday(event.day.dateTime.weekday)),
-      );
-      }).toList(),
-      );
-   *
-   *
-   */
+  var emptyState = new Container(child:
+    new Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        new Image.asset("assets/nothing_here.png"),
+        new Padding(padding: new EdgeInsets.only(top: 8.0), child: new Text('Nothing here. Come back soon!',
+          textAlign: TextAlign.center))
+      ],
+    )
+  );
+
   @override
   Widget build(BuildContext context) {
     var docs = Firestore.instance.collection('views').document('schedule').getCollection('schedule_pages').getDocuments().asStream();
@@ -40,10 +52,13 @@ class EventList extends StatelessWidget {
     return new StreamBuilder<QuerySnapshot>(
       stream: docs,
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-        if (!snapshot.hasData) return const Text('Loading...');
+        if (!snapshot.hasData) return emptyState;
         var docs = snapshot.data.documents;
-        var eventDays = docs.map((snapshot) => _getWeekday(new EventDay(snapshot).day.dateTime.weekday)).toList();
-        return _createTabs(eventDays);
+        Iterable<EventDay> days = docs.map((snapshot) => new EventDay(snapshot));
+
+        var eventDays = days.map((day) => _getWeekday(day.day.dateTime.weekday)).toList();
+        var events = days.map((day) => day.events).toList();
+        return _createTabs(eventDays, events);
       },
     );
   }
@@ -83,24 +98,6 @@ class ScheduleView extends StatelessWidget {
           new SearchButton()
         ]
     );
-
-    var emptyState = new Container(child:
-          new Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              new Image.asset("assets/nothing_here.png"),
-              new Padding(padding: new EdgeInsets.only(top: 8.0), child: new Text('Nothing here. Come back soon!',
-                textAlign: TextAlign.center,
-                style: theme.textTheme.display1.copyWith(
-                    color: Colors.black,
-                    fontSize: 16.0),)),
-            ],
-          )
-    );
-
-    final body = new PageView(children: <Widget>[
-      emptyState,
-    ],);
 
     return new Scaffold(
       appBar: appBar,
