@@ -2,9 +2,13 @@ name: SquanchyFlutter
 description: Just like Squanchy, but in Flutter.
 
 dependencies:
-  cupertino_icons: ^0.1.1
+  cupertino_icons: 0.1.2
   flutter:
     sdk: flutter
+  google_sign_in: 3.0.2
+  firebase_analytics: 0.3.3
+  firebase_auth: 0.5.5
+  cloud_firestore: 0.6.3
 
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
