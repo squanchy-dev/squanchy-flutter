@@ -1,4 +1,5 @@
 import 'package:SquanchyFlutter/models/EventModels.dart';
+import 'package:SquanchyFlutter/schedule/schedule_item.dart';
 import 'package:SquanchyFlutter/utils/button_widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
@@ -35,7 +36,7 @@ class EventList extends StatelessWidget {
     return new ListView(
         children: events.map((event) {
           return new ListTile(
-            title: new Text(event.title),
+            title: new EventItem(event),
           );
         }).toList(),
     );
@@ -54,7 +55,7 @@ class EventList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var docs = Firestore.instance.collection('views').document('schedule').getCollection('schedule_pages').getDocuments().asStream();
+    var docs = Firestore.instance.collection('views').document('schedule').collection('schedule_pages').getDocuments().asStream();
 
     return new StreamBuilder<QuerySnapshot>(
       stream: docs,

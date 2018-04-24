@@ -11,18 +11,18 @@ PODS:
     - Firebase/Database
     - Firebase/Firestore
     - Flutter
-  - Firebase/Auth (4.10.1):
+  - Firebase/Auth (4.11.0):
     - Firebase/Core
-    - FirebaseAuth (= 4.4.4)
-  - Firebase/Core (4.10.1):
+    - FirebaseAuth (= 4.5.0)
+  - Firebase/Core (4.11.0):
     - FirebaseAnalytics (= 4.1.0)
-    - FirebaseCore (= 4.0.17)
-  - Firebase/Database (4.10.1):
+    - FirebaseCore (= 4.0.18)
+  - Firebase/Database (4.11.0):
     - Firebase/Core
     - FirebaseDatabase (= 4.1.5)
-  - Firebase/Firestore (4.10.1):
+  - Firebase/Firestore (4.11.0):
     - Firebase/Core
-    - FirebaseFirestore (= 0.10.3)
+    - FirebaseFirestore (= 0.10.4)
   - firebase_analytics (0.0.1):
     - Firebase/Core
     - Flutter
@@ -30,28 +30,31 @@ PODS:
     - Firebase/Auth
     - Firebase/Core
     - Flutter
+  - firebase_core (0.0.1):
+    - Firebase/Core
+    - Flutter
   - FirebaseAnalytics (4.1.0):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
     - nanopb (~> 0.3)
-  - FirebaseAuth (4.4.4):
+  - FirebaseAuth (4.5.0):
     - FirebaseAnalytics (~> 4.1)
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseCore (4.0.17):
+  - FirebaseCore (4.0.18):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
   - FirebaseDatabase (4.1.5):
     - FirebaseAnalytics (~> 4.1)
     - FirebaseCore (~> 4.0)
     - leveldb-library (~> 1.18)
-  - FirebaseFirestore (0.10.3):
+  - FirebaseFirestore (0.10.4):
     - FirebaseAnalytics (~> 4.1)
     - FirebaseCore (~> 4.0)
     - gRPC-ProtoRPC (~> 1.0)
     - leveldb-library (~> 1.18)
     - Protobuf (~> 3.5)
-  - FirebaseInstanceID (2.0.9):
+  - FirebaseInstanceID (2.0.10):
     - FirebaseCore (~> 4.0)
   - Flutter (1.0.0)
   - google_sign_in (0.0.1):
@@ -107,38 +110,42 @@ PODS:
   - Protobuf (3.5.0)
 
 DEPENDENCIES:
-  - cloud_firestore (from `/Users/niamhpower/.pub-cache/git/flutter_plugins-9cabcc57e63fbc9be4fafee08e6435a1a8c71d61/packages/cloud_firestore/ios`)
-  - firebase_analytics (from `/Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-0.3.0/ios`)
-  - firebase_auth (from `/Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.5.1/ios`)
+  - cloud_firestore (from `/Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.6.3/ios`)
+  - firebase_analytics (from `/Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-0.3.3/ios`)
+  - firebase_auth (from `/Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.5.5/ios`)
+  - firebase_core (from `/Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.2.3/ios`)
   - Flutter (from `/Users/niamhpower/flutter/bin/cache/artifacts/engine/ios`)
-  - google_sign_in (from `/Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/google_sign_in-3.0.0/ios`)
+  - google_sign_in (from `/Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/google_sign_in-3.0.2/ios`)
 
 EXTERNAL SOURCES:
   cloud_firestore:
-    :path: /Users/niamhpower/.pub-cache/git/flutter_plugins-9cabcc57e63fbc9be4fafee08e6435a1a8c71d61/packages/cloud_firestore/ios
+    :path: /Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.6.3/ios
   firebase_analytics:
-    :path: /Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-0.3.0/ios
+    :path: /Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-0.3.3/ios
   firebase_auth:
-    :path: /Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.5.1/ios
+    :path: /Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.5.5/ios
+  firebase_core:
+    :path: /Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.2.3/ios
   Flutter:
     :path: /Users/niamhpower/flutter/bin/cache/artifacts/engine/ios
   google_sign_in:
-    :path: /Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/google_sign_in-3.0.0/ios
+    :path: /Users/niamhpower/.pub-cache/hosted/pub.dartlang.org/google_sign_in-3.0.2/ios
 
 SPEC CHECKSUMS:
   BoringSSL: 32764dbaf5f5888cf51fbaa172a010126b41bcd4
-  cloud_firestore: 00886d0b271577dfadd33be97d6bb6095f49499d
-  Firebase: 92c6ba593e32db0defde464a9adc981d5cb49f97
-  firebase_analytics: ad15e54404e21983408c8b0c24a9d11247be7f33
-  firebase_auth: 499d5bfb249606a276f6bddf292a3b2d44139f75
+  cloud_firestore: a2d49d9c7219fce31033eb1a2ee953d7733c91d6
+  Firebase: cc13dfab1038c8b45d7903e01fc690451d6d0b24
+  firebase_analytics: fcc60a9de4b8e07aa5af8941303a7f5fe6e0383f
+  firebase_auth: 27a5a77a032d557c18f8e223aaf8ec1368f6cdbc
+  firebase_core: c96aa8b2fcf7f5167d32f22034f502f9304952b8
   FirebaseAnalytics: 3dfae28d4a5e06f86c4fae830efc2ad3fadb19bc
-  FirebaseAuth: d040bb7a9db6dfc29d0e7ec82d48be51352b2581
-  FirebaseCore: 872307b001bbefda1dfa0dbfffa50a6919023d4a
+  FirebaseAuth: 147bf340a0706b44ca1753d6b41ebafd9687cfe6
+  FirebaseCore: b981f47e5254cbcfdeb483355300d743f6fcab2c
   FirebaseDatabase: 5f0bc6134c5c237cf55f9e1249d406770a75eafd
-  FirebaseFirestore: 41d1ec1f37963b63f8bbbcdb94d8545d4c6c1b42
-  FirebaseInstanceID: d2058a35e9bebda1b6dd42486b84917bde552a9d
+  FirebaseFirestore: 796df79c29cf8ecf806564f4d347665bdafa6ef0
+  FirebaseInstanceID: 8d20d890d65c917f9f7d9950b6e10a760ad34321
   Flutter: 9d0fac939486c9aba2809b7982dfdbb47a7b0296
-  google_sign_in: 64523e9b42c475b01b726ff87e450425ea6d15bc
+  google_sign_in: cbeb57b96679823d14df6b2240b629b983a42d79
   GoogleSignIn: d9ef55b10f0aa401a5de2747f59b725e4b9732ac
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   gRPC: f54f0e6d603052b4562447da442ce2ff30bcdacc
