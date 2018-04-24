@@ -14,11 +14,6 @@ class EventItem extends StatelessWidget {
           color: Colors.white,
           shape: BoxShape.rectangle,
           borderRadius: new BorderRadius.circular(8.0),
-          boxShadow: <BoxShadow>[
-            new BoxShadow(color: Colors.black,
-              blurRadius: 10.0,
-              offset: new Offset(0.0, 10.0))
-          ]
     ),
     child: new Container(
       margin: const EdgeInsets.only(top: 5.0, left: 5.0),
@@ -30,11 +25,14 @@ class EventItem extends StatelessWidget {
             children: <Widget>[
               new Column(
                 children: <Widget>[
+                  new Container(height: 5.0),
                   new Text("12:00"),
+                  new Container(height: 10.0),
                   new Text("Lunch"),
                 ]
               ),
-              new Image.asset("assets/nothing_here.png"),
+              new Container(width: 150.0),
+              new Center(child: new Image.asset("assets/nothing_here.png", width: 100.0, height: 40.0)),
             ]
           )
         ],
@@ -42,10 +40,9 @@ class EventItem extends StatelessWidget {
     ),);
 
     return new Container(
-      height: 120.0,
+      height: 80.0,
       child: new FlatButton(
         onPressed: null,
-
         child: new Stack(
           children: <Widget>[
             eventCard
