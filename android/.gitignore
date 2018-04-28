@@ -24,3 +24,6 @@ local.properties
 
 # Heap dump captures
 captures/
+
+# App secrets are ignored
+google-services.json

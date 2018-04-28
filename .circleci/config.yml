@@ -24,7 +24,7 @@ jobs:
           name: Get Pub packages
           command: flutter packages get
       - run:
-          name: Build Android APK (debug)
+          name: Build Android APK (release)
           command: flutter build apk -v
 
   "flutter analyze":
