@@ -16,7 +16,7 @@
     android:label="squanchy_flutter"
     android:icon="@mipmap/ic_launcher">
     <activity
-      android:name=".MainActivity"
+      android:name="net.squanchy.MainActivity"
       android:launchMode="singleTop"
       android:theme="@android:style/Theme.Black.NoTitleBar"
       android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection"
