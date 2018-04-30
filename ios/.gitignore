@@ -35,3 +35,20 @@ Icon?
 /Flutter/Flutter.framework
 /Flutter/Generated.xcconfig
 /ServiceDefinitions.json
+
+## Other
+*.xccheckout
+*.xcuserstate
+*.xcscmblueprint
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+
+# CocoaPods
+Pods/
+
+# Firebase config
+GoogleService-Info.plist
+
+.generated/
