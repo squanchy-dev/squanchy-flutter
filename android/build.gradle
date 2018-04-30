@@ -3,13 +3,21 @@ buildscript {
         google()
         jcenter()
     }
-
+    
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.1'
+        classpath 'com.android.tools.build:gradle:3.1.2'
+        classpath 'com.google.gms:google-services:3.1.0'
     }
 }
 
 allprojects {
+    buildscript {
+        repositories {
+            google()
+            jcenter()
+        }
+    }
+
     repositories {
         google()
         jcenter()
@@ -23,8 +31,4 @@ subprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '3.4.1'
 }

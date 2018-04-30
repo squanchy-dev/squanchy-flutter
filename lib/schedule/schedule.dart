@@ -17,16 +17,18 @@ class ScheduleView extends StatelessWidget {
         ]
     );
 
-    final emptyState = new Container(child:
-      new Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            new Image.asset("assets/nothing_here.png"),
-            new Text('Nothing here. Come back soon!',
-              textAlign: TextAlign.center,
-              style: theme.textTheme.display1.copyWith(color: Colors.black, fontSize: 16.0),),
-          ],
-      )
+    var emptyState = new Container(child:
+          new Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              new Image.asset("assets/nothing_here.png"),
+              new Padding(padding: new EdgeInsets.only(top: 8.0), child: new Text('Nothing here. Come back soon!',
+                textAlign: TextAlign.center,
+                style: theme.textTheme.display1.copyWith(
+                    color: Colors.black,
+                    fontSize: 16.0),)),
+            ],
+          )
     );
 
     final body = new PageView(children: <Widget>[

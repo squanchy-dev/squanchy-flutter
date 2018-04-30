@@ -26,5 +26,4 @@ pubspec.lock
 
 build/
 
-ios/.generated/
 .flutter-plugins

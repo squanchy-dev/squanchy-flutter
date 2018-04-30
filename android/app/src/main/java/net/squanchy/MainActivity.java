@@ -1,4 +1,4 @@
-package com.yourcompany.squanchyFlutter;
+package net.squanchy.flutter;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

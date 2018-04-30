@@ -1,3 +1,9 @@
+buildscript {
+    dependencies {
+        classpath 'com.google.gms:google-services:3.2.1'
+    }
+}
+
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
 if (localPropertiesFile.exists()) {
@@ -15,15 +21,18 @@ apply plugin: 'com.android.application'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '25.0.2'
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+
+    defaultConfig {
+        applicationId 'net.squanchy.develop'
+
+        minSdkVersion 16
+        targetSdkVersion 27
+    }
 
     lintOptions {
         disable 'InvalidPackage'
-    }
-
-    defaultConfig {
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -40,7 +49,14 @@ flutter {
 }
 
 dependencies {
-    androidTestCompile 'com.android.support:support-annotations:25.0.0'
-    androidTestCompile 'com.android.support.test:runner:0.5'
-    androidTestCompile 'com.android.support.test:rules:0.5'
+    // We need to pin the exact versions the plugins use or we're
+    // unable to sync/build with the Google-services plugin
+    implementation 'com.google.firebase:firebase-firestore:15.0.0'
+    implementation 'com.google.android.gms:play-services-auth:15.0.0'
+    implementation 'com.google.firebase:firebase-core:15.0.0'
+    implementation 'com.google.firebase:firebase-auth:15.0.0'
+    implementation 'com.google.firebase:firebase-analytics:15.0.0'
+    implementation 'com.google.firebase:firebase-firestore:15.0.0'
 }
+
+apply plugin: 'com.google.gms.google-services'
