@@ -9,6 +9,7 @@ class EventItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     final eventCard = new Container(
         decoration: new BoxDecoration(
           color: Colors.white,
@@ -26,7 +27,7 @@ class EventItem extends StatelessWidget {
               new Column(
                 children: <Widget>[
                   new Container(height: 5.0),
-                  new Text("12:00"),
+                  new Text("12:00", style: Theme.of(context).primaryTextTheme.title.copyWith(color: theme.accentColor)),
                   new Container(height: 10.0),
                   new Text("Lunch"),
                 ]
