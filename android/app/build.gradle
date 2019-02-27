@@ -19,7 +19,7 @@ android {
     buildToolsVersion '27.0.3'
 
     defaultConfig {
-        applicationId 'net.squanchy.develop'
+        applicationId 'net.squanchy.develop.flutter'
 
         minSdkVersion 16
         targetSdkVersion 27
