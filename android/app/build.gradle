@@ -15,14 +15,15 @@ apply plugin: 'com.android.application'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     buildToolsVersion '27.0.3'
 
     defaultConfig {
         applicationId 'net.squanchy.develop.flutter'
 
         minSdkVersion 16
-        targetSdkVersion 27
+        targetSdkVersion 28
+        multiDexEnabled true
     }
 
     lintOptions {
