@@ -12,9 +12,9 @@ if [ ! -e ${ANDROID_JSON_PATH} ]; then
     echo '{
       "project_info": {
         "project_number": "012345678912",
-        "firebase_url": "https://squanchy-mock.firebaseio.com",
-        "project_id": "squanchy-mock",
-        "storage_bucket": "squanchy-mock.appspot.com"
+        "firebase_url": "https://squanchy-dev.firebaseio.com",
+        "project_id": "squanchy-dev",
+        "storage_bucket": "squanchy-dev.appspot.com"
       },
       "client": [
         {
