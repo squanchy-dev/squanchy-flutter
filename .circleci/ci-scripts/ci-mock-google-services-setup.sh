@@ -21,7 +21,7 @@ if [ ! -e ${ANDROID_JSON_PATH} ]; then
           "client_info": {
             "mobilesdk_app_id": "1:012345678912:android:1337deadbeef",
             "android_client_info": {
-              "package_name": "net.squanchy.example"
+              "package_name": "net.squanchy.develop.flutter"
             }
           },
           "oauth_client": [
@@ -29,7 +29,7 @@ if [ ! -e ${ANDROID_JSON_PATH} ]; then
               "client_id": "XXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.apps.googleusercontent.com",
               "client_type": 1,
               "android_info": {
-                "package_name": "net.squanchy.example",
+                "package_name": "net.squanchy.develop.flutter",
                 "certificate_hash": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
               }
             },
@@ -37,7 +37,7 @@ if [ ! -e ${ANDROID_JSON_PATH} ]; then
               "client_id": "XXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.apps.googleusercontent.com",
               "client_type": 1,
               "android_info": {
-                "package_name": "net.squanchy.example",
+                "package_name": "net.squanchy.develop.flutter",
                 "certificate_hash": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
               }
             },
