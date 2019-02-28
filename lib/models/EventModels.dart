@@ -1,7 +1,3 @@
-import 'dart:async';
-
-import 'package:cloud_firestore/cloud_firestore.dart';
-
 class EventDay {
   Day day;
   List<Event> events;
@@ -28,9 +24,7 @@ class Day {
   }
 }
 
-enum EventType {
-  talk
-}
+enum EventType { talk }
 
 class Event {
   String title;
@@ -62,11 +56,7 @@ class Place {
   String name;
 }
 
-enum Level {
-  beginner,
-  intermediate,
-  advanced
-}
+enum Level { beginner, intermediate, advanced }
 
 class Speaker {
   String address;
