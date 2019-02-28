@@ -14,6 +14,10 @@ jobs:
     steps:
       - checkout
 
+      - run:
+          name: Create mock Play Services JSON & PList files
+          command: .circleci/ci-scripts/ci-mock-google-services-setup.sh
+
       # Run Flutter Doctor
       - run:
           name: Flutter Doctor
@@ -24,7 +28,7 @@ jobs:
           name: Get Pub packages
           command: flutter packages get
       - run:
-          name: Build Android APK (debug)
+          name: Build Android APK (release)
           command: flutter build apk -v
 
   "flutter analyze":

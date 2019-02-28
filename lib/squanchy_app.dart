@@ -39,7 +39,7 @@ class SquanchyFlutterApp extends StatelessWidget {
     return new MaterialApp(
         theme: theme,
         title: 'Squanchy Flutter',
-        home: new RootView(),
+        home: new RootViewPage(key: key,),
         );
   }
 }
