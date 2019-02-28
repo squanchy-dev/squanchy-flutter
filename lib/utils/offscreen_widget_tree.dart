@@ -3,12 +3,14 @@ adapted from:
 https://github.com/flutter/flutter/blob/master/packages/flutter/test/widgets/independent_widget_layout_test.dart
 */
 
+import 'dart:ui' as ui show window;
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 class OffscreenWidgetTree {
-  OffscreenWidgetTree(Size containerSize)
-      : renderView = new _OffscreenRenderView(containerSize) {
+  OffscreenWidgetTree(Size containerSize) : renderView = new _OffscreenRenderView(containerSize, ui.window) {
     renderView.attach(pipelineOwner);
     renderView.scheduleInitialFrame();
   }
@@ -20,11 +22,9 @@ class OffscreenWidgetTree {
   RenderObjectToWidgetElement<RenderBox> root;
 
   void pumpWidget(Widget app) {
-    root = new RenderObjectToWidgetAdapter<RenderBox>(
-        container: renderView,
-        debugShortDescription: '[root]',
-        child: app
-    ).attachToRenderTree(buildOwner, root);
+    root =
+        new RenderObjectToWidgetAdapter<RenderBox>(container: renderView, debugShortDescription: '[root]', child: app)
+            .attachToRenderTree(buildOwner, root);
     pumpFrame();
   }
 
@@ -36,8 +36,8 @@ class OffscreenWidgetTree {
 }
 
 class _OffscreenRenderView extends RenderView {
-  _OffscreenRenderView(Size size)
-      : super(configuration: new ViewConfiguration(size: size));
+  _OffscreenRenderView(Size size, Window window)
+      : super(configuration: new ViewConfiguration(size: size), window: window);
 
   @override
   void compositeFrame() {
