@@ -16,7 +16,7 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
     compileSdkVersion 28
-    buildToolsVersion '27.0.3'
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
         applicationId 'net.squanchy.develop.flutter'
@@ -44,7 +44,7 @@ flutter {
 }
 
 dependencies {
-    implementation 'com.google.firebase:firebase-firestore:15.0.0'
+    implementation 'com.google.firebase:firebase-firestore:18.1.0'
 }
 
 apply plugin: 'com.google.gms.google-services'
