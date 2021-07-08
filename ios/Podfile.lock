@@ -25,9 +25,6 @@ PODS:
   - Firebase/Firestore (5.15.0):
     - Firebase/CoreOnly
     - FirebaseFirestore (= 0.16.1)
-  - firebase_analytics (0.0.1):
-    - Firebase/Core
-    - Flutter
   - firebase_auth (0.0.1):
     - Firebase/Auth
     - Firebase/Core
@@ -141,12 +138,11 @@ PODS:
   - Protobuf (3.6.1)
 
 DEPENDENCIES:
-  - "cloud_firestore (from `/Users/niamhpower/development/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.8.2+3/ios`)"
-  - firebase_analytics (from `/Users/niamhpower/development/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-1.1.0/ios`)
-  - firebase_auth (from `/Users/niamhpower/development/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.7.0/ios`)
-  - "firebase_core (from `/Users/niamhpower/development/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.2.5+1/ios`)"
-  - Flutter (from `/Users/niamhpower/development/flutter/bin/cache/artifacts/engine/ios`)
-  - google_sign_in (from `/Users/niamhpower/development/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in-3.2.4/ios`)
+  - cloud_firestore (from `.symlinks/plugins/cloud_firestore/ios`)
+  - firebase_auth (from `.symlinks/plugins/firebase_auth/ios`)
+  - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
+  - Flutter (from `.symlinks/flutter/ios`)
+  - google_sign_in (from `.symlinks/plugins/google_sign_in/ios`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -172,24 +168,21 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   cloud_firestore:
-    :path: "/Users/niamhpower/development/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.8.2+3/ios"
-  firebase_analytics:
-    :path: "/Users/niamhpower/development/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-1.1.0/ios"
+    :path: ".symlinks/plugins/cloud_firestore/ios"
   firebase_auth:
-    :path: "/Users/niamhpower/development/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.7.0/ios"
+    :path: ".symlinks/plugins/firebase_auth/ios"
   firebase_core:
-    :path: "/Users/niamhpower/development/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.2.5+1/ios"
+    :path: ".symlinks/plugins/firebase_core/ios"
   Flutter:
-    :path: "/Users/niamhpower/development/flutter/bin/cache/artifacts/engine/ios"
+    :path: ".symlinks/flutter/ios"
   google_sign_in:
-    :path: "/Users/niamhpower/development/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in-3.2.4/ios"
+    :path: ".symlinks/plugins/google_sign_in/ios"
 
 SPEC CHECKSUMS:
   BoringSSL: e10f92a27043805c01071fe815a5cd98ae8212e7
-  cloud_firestore: c575f263eb7033afb7d407e6264b21d6e622a061
+  cloud_firestore: cd6e849ecb8ab43e5a7a5f1f169304ca65436c03
   Firebase: 8bb9268bff82374f2cbaaabb143e725743c316ae
-  firebase_analytics: 7fa219488f2a781ca776bf72ecc66b6ac4511272
-  firebase_auth: 6023fc2e28feabd6571d9a105b678cce7978be90
+  firebase_auth: 02ced56521bc9f220d40edda27b1ec5a2fcdf01e
   firebase_core: ce5006bb48508ee4e71e0f429a3f519bb8ee2961
   FirebaseAnalytics: c06f9d70577d79074214700a71fd5d39de5550fb
   FirebaseAuth: 02e969ff430e156d99d4cb842d77b806b71ad7bb
@@ -211,6 +204,6 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
 
-PODFILE CHECKSUM: 35947b2c1cae92ea15d99c3339306cd184068dd6
+PODFILE CHECKSUM: 45d93d6f8763627ddfb790d52a209dd0d91a1f18
 
 COCOAPODS: 1.6.0.beta.2
